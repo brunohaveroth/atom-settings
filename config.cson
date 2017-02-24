@@ -22,7 +22,7 @@
     ]
   editor:
     fontFamily: "Ubuntu Mono"
-    fontSize: 19
+    fontSize: 17
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
@@ -43,6 +43,7 @@
   "project-viewer":
     autoHide: true
     panelPosition: "Left (first)"
+  "spotify-linux": {}
   "sync-settings":
     gistDescription: "Atom Sync"
     gistId: "83d5932a995c7272d6ba79d088b740b0"
