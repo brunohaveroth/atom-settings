@@ -1,0 +1,136 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+@cover-thumbnail-size: 56px;
+
+.atom-spotified,
+.atom-spotified-status {
+  position: relative;
+
+  .player-state {
+    height: 12px;
+    width: 12px;
+    opacity: .6;
+  }
+}
+
+.atom-spotified {
+  border-top: 1px solid @tree-view-border-color;
+  border-bottom: 1px solid @tree-view-border-color;
+  width: 100%;
+
+  &.large-cover {
+    .info .track-info {
+      margin-left: 0;
+    }
+  }
+
+  .cover {
+    position: absolute;
+    width: @cover-thumbnail-size;
+    height: @cover-thumbnail-size;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fa-spotify {
+      font-size: 48px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .cover-2 {
+    position: relative;
+
+    .fa-spotify {
+      width: 100%;
+      font-size: 100px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .info {
+    width: 100%;
+    overflow: hidden;
+
+    .track-info {
+      transition: margin .1s ease-out;
+      margin-left: @cover-thumbnail-size;
+      background-color: @tree-view-background-color;
+      padding: 10px 7px;
+      height: @cover-thumbnail-size;
+      z-index: 5;
+      position: relative;
+    }
+
+    .name, .artist {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .name {
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    .artist {
+      font-size: 12px;
+    }
+
+    .player-state {
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .toggle {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    right: 2px;
+    top: 2px;
+    border-radius: 3px;
+    color: white;
+    background-color: #333;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity .2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+
+    &:hover {
+      opacity: .9 !important;
+    }
+  }
+
+  .cover,
+  .cover-2 {
+    &:hover .toggle {
+      opacity: .4;
+    }
+  }
+}
+
+.atom-spotified-status {
+  .player-state,
+  .fa {
+    margin-right: 2px;
+  }
+}

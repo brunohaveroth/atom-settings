@@ -1,0 +1,74 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/d-117230-6547-4oqj76/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/d-117230-6547-4oqj76/package.tgz",
+        "spec": "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/d-117230-6547-4oqj76/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/apm-install-dir-117230-6547-1bewwyj"
+    ]
+  ],
+  "_from": "../d-117230-6547-4oqj76/package.tgz",
+  "_id": "linter-stylint-h@0.0.15",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/linter-stylint-h",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/d-117230-6547-4oqj76/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/d-117230-6547-4oqj76/package.tgz",
+    "spec": "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/d-117230-6547-4oqj76/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117230-6547-4oqj76/package.tgz",
+  "_shasum": "4d7e152e5268ec5530c2c081fc700504393a96a3",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/d-117230-6547-4oqj76/package.tgz",
+  "_where": "/private/var/folders/b0/xk7csyz11618w9mz06zrb_2c0000gn/T/apm-install-dir-117230-6547-1bewwyj",
+  "bugs": {
+    "url": "https://github.com/ViZhe/linter-stylint-h/issues"
+  },
+  "dependencies": {
+    "atom-linter": "^4.0.0",
+    "atom-package-deps": "^3.0.0",
+    "stylint": "^1.0.0"
+  },
+  "description": "Linter plugin for Stylus, using `stylint`.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/ViZhe/linter-stylint-h",
+  "license": "MIT",
+  "main": "./lib/init",
+  "name": "linter-stylint-h",
+  "optionalDependencies": {},
+  "package-deps": [
+    "linter"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "readme": "Atom linter-stylint-h\n=========================\n\nThis linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface to [stylint](https://www.npmjs.com/package/stylint). It will be used with files that have the “Stylus” syntax.\n\n[![Build Status](https://travis-ci.org/ViZhe/linter-stylint-h.svg?style=flat-square)](https://travis-ci.org/ViZhe/linter-stylint-h)\n\n### Plugin installation\n```\n$ apm install linter-stylint-h\n```\n\n## Contributing\nIf you would like to contribute enhancements or fixes, please do the following:\n\n1. Fork the plugin repository.\n2. Hack on a separate topic branch created from the latest `master`.\n3. Commit and push the topic branch.\n4. Make a pull request.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViZhe/linter-stylint-h.git"
+  },
+  "version": "0.0.15"
+}

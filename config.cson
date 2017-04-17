@@ -1,0 +1,21 @@
+"*":
+  core:
+    closeEmptyWindows: false
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "atom-spotified"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  editor:
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
+  "sync-settings":
+    gistDescription: "Atom Sync"
+    gistId: "83d5932a995c7272d6ba79d088b740b0"
+    personalAccessToken: "3e62618be1122de00aa90e0237688c5ce548ce1c"
+  "tree-view":
+    hideVcsIgnoredFiles: true
