@@ -1,10 +1,14 @@
 "*":
+  "atom-package-deps":
+    ignored: [
+      "linter"
+    ]
   core:
     closeEmptyWindows: false
     destroyEmptyPanes: false
-    disabledPackages: [
-      "atom-spotified"
-    ]
+    excludeVcsIgnoredPaths: false
+    openEmptyEditorOnStart: false
+    projectHome: "~/Projects"
     themes: [
       "atom-dark-ui"
       "base16-tomorrow-dark-theme"
@@ -13,9 +17,16 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
+  "platformio-ide-terminal":
+    style:
+      defaultPanelHeight: "600px"
   "sync-settings":
     gistDescription: "Atom Sync"
     gistId: "83d5932a995c7272d6ba79d088b740b0"
     personalAccessToken: "3e62618be1122de00aa90e0237688c5ce548ce1c"
+  "terminal-plus":
+    core: {}
   "tree-view":
     hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
