@@ -6,9 +6,9 @@
   core:
     closeEmptyWindows: false
     destroyEmptyPanes: false
-    excludeVcsIgnoredPaths: false
     openEmptyEditorOnStart: false
     projectHome: "~/Projects"
+    telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
       "base16-tomorrow-dark-theme"
@@ -17,6 +17,8 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
+  "nav-panel-plus":
+    leftPanel: true
   "platformio-ide-terminal":
     style:
       defaultPanelHeight: "600px"
@@ -26,7 +28,6 @@
     personalAccessToken: "3e62618be1122de00aa90e0237688c5ce548ce1c"
   "terminal-plus":
     core: {}
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false

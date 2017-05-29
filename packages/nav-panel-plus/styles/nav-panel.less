@@ -1,0 +1,95 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.zi-marker-panel {
+  width: 200px;
+  min-width: 100px;
+  max-width: 800px;
+  height: 100%;
+  white-space: nowrap;
+  overflow-y: auto;
+}
+.zi-marker-panel .list-item {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.zi-marker-panel .list-tree.has-collapsable-children li.list-item {
+  margin-left: 0;
+  padding-left: 15px;
+}
+.zi-marker-panel .list-item:not(.zi-highlight) .icon {
+  background: linear-gradient(45deg, transparent 0.85rem, #808080 0.85rem, #808080 1.05rem, transparent 1.05rem);
+  color: gray;
+}
+.zi-marker-panel .list-item .icon:before {
+  font-size: 14px;
+  width: 10px;
+}
+.zi-marker-panel .list-item .icon:hover {
+  color: orange;
+  background: none;
+}
+.zi-marker-panel .list-item.zi-highlight .icon:hover {
+  color: gray;
+  background: linear-gradient(45deg, transparent 0.85rem, #808080 0.85rem, #808080 1.05rem, transparent 1.05rem);
+}
+.zi-marker-panel .list-item:hover {
+  background-color: @background-color-highlight
+}
+.zi-marker-group-label {
+  border-bottom: 1px solid grey;
+}
+.zi-marker-group-label>span {
+  font-size: 14px;
+  font-weight: bold;
+  // border-bottom: 1px solid @background-color-highlight
+}
+.zi-marker-panel .zi-highlight>span {
+  color: orange;
+}
+atom-text-editor div.line-number.zi-highlight {
+  background-color: orange;
+}
+.zi-resizable {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.zi-width-resizer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  cursor: ew-resize;
+  z-index: 5;
+}
+
+.zi-width-resizer.left {
+  left: 0;
+}
+.zi-width-resizer.right {
+  right: 0;
+}
+
+.zi-header>.icon {
+  float: right;
+  width: 1.6rem;
+  position: relative;
+  right: 0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.zi-header>.icon.alphabetical-order::before {
+  content: "a-z";
+  font-weight: bold;
+}
+
+.zi-header .editor.mini {
+  width: 100%;
+  display: inline-block;
+}
