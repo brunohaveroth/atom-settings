@@ -7,6 +7,7 @@
     closeEmptyWindows: false
     destroyEmptyPanes: false
     openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: []
     projectHome: "~/Projects"
     telemetryConsent: "no"
     themes: [
@@ -14,9 +15,12 @@
       "base16-tomorrow-dark-theme"
     ]
   editor:
+    fontSize: 15
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
+  gist:
+    token: "d6ef90ae77c4e5993e8917dd3856006f281f1507"
   "nav-panel-plus":
     leftPanel: true
   "platformio-ide-terminal":

@@ -1,0 +1,74 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11752-17374-136it8z.be7i0h33di/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11752-17374-136it8z.be7i0h33di/package.tgz",
+        "spec": "/tmp/d-11752-17374-136it8z.be7i0h33di/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11752-17374-1lhsarf.w0m6etgldi"
+    ]
+  ],
+  "_from": "../d-11752-17374-136it8z.be7i0h33di/package.tgz",
+  "_id": "spotify-linux@0.3.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/spotify-linux",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11752-17374-136it8z.be7i0h33di/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11752-17374-136it8z.be7i0h33di/package.tgz",
+    "spec": "/tmp/d-11752-17374-136it8z.be7i0h33di/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11752-17374-136it8z.be7i0h33di/package.tgz",
+  "_shasum": "a74ec07b47dc4a39a392a2bf4a69f19be7de1491",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11752-17374-136it8z.be7i0h33di/package.tgz",
+  "_where": "/tmp/apm-install-dir-11752-17374-1lhsarf.w0m6etgldi",
+  "bugs": {
+    "url": "https://github.com/jazzpi/spotify-linux/issues"
+  },
+  "dependencies": {
+    "dbus-native": "^0.2.0",
+    "event-kit": "^1.0.3"
+  },
+  "description": "Spotify integration for Linux",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/jazzpi/spotify-linux#readme",
+  "license": "MIT",
+  "main": "./lib/spotify-linux",
+  "name": "spotify-linux",
+  "optionalDependencies": {},
+  "os": [
+    "linux"
+  ],
+  "providedServices": {
+    "spotify-linux": {
+      "description": "Spotify integration for Linux",
+      "versions": {
+        "0.1.0": "provideSpotify"
+      }
+    }
+  },
+  "readme": "# spotify-linux package\n\nA package adding Spotify integration for Linux.\n\nHeavily inspired by [jakemarsh/atom-spotify](https://github.com/jakemarsh/atom-spotify).\n\n![](https://raw.githubusercontent.com/jazzpi/spotify-linux/master/spotify-linux.png)\n\nDisplays the currently playing song in the status bar. You can format the\nstring however you like (you can use HTML!), with these placeholders:\n\n - `%p`: Whether or not the current song is playing. Displays a play/pause icon\n - `%c`: Image of the cover art\n - `%l`: Length of the song\n - `%A`: Album\n - `%a`: Artist\n - `%r`: Auto-Rating provided by Spotify\n - `%y`: Year of publishing\n - `%d`: Disc number\n - `%t`: Title\n - `%n`: Track number\n\nDefault keybindings are like this:\n\n - `ctrl-alt-shift-right`: Next song\n - `ctrl-alt-shift-left`: Previous song\n - `ctrl-alt-shift-space`: Play/Pause\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazzpi/spotify-linux.git"
+  },
+  "version": "0.3.2"
+}
