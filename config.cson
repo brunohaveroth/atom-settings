@@ -1,4 +1,8 @@
 "*":
+  "activate-power-mode":
+    plugins:
+      playAudio: true
+      screenShake: true
   "atom-package-deps":
     ignored: [
       "linter"
@@ -6,6 +10,9 @@
   core:
     closeEmptyWindows: false
     destroyEmptyPanes: false
+    disabledPackages: [
+      "activate-power-mode"
+    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: []
     projectHome: "~/Projects"
@@ -18,6 +25,8 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
+  "fold-functions":
+    skipAutofoldWhenNotFirstLine: true
   gist:
     token: "d6ef90ae77c4e5993e8917dd3856006f281f1507"
   "nav-panel-plus":
