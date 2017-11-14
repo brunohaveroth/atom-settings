@@ -14,3 +14,10 @@
   'Ember.inject.service':
     'prefix': 'injectService'
     'body': "Ember.inject.service('$1')"
+  'importSwalError':
+    'prefix': 'importSwalError'
+    'body': "import swalError from '$1/utils/swal-error';"
+'.source.hbs':
+  'submitEmber':
+    'prefix': 'submitEmber'
+    'body': '<form class="form" {{action "saveItem" model on="submit"}}></form>'
