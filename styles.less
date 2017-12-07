@@ -21,16 +21,24 @@
 }
 
 .tree-view .selected:before {
-  background-color: #171819;
+  background-color: #333;
 }
 
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
   // color: white;
-  // background-color: hsl(180, 24%, 12%);
+  background-color: #171819;
 }
 
 // style UI elements inside atom-text-editor
 atom-text-editor .cursor {
   // border-color: red;
+}
+
+.project-root::before{
+  background: #333 !important;
+  height: 35px !important;
+}
+.project-root-header{
+  margin-bottom: 5px !important;
 }

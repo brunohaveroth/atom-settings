@@ -22,7 +22,7 @@
       "base16-tomorrow-dark-theme"
     ]
   editor:
-    fontSize: 16
+    fontSize: 17
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
@@ -41,6 +41,7 @@
     personalAccessToken: "3e62618be1122de00aa90e0237688c5ce548ce1c"
   "terminal-plus":
     core: {}
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
