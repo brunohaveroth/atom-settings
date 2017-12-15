@@ -3,6 +3,8 @@
     plugins:
       playAudio: true
       screenShake: true
+  "atom-hyperlinks":
+    linksArray: "https://github.com/talentrh/talentrh-components"
   "atom-package-deps":
     ignored: [
       "linter"
@@ -10,9 +12,6 @@
   core:
     closeEmptyWindows: false
     destroyEmptyPanes: false
-    disabledPackages: [
-      "activate-power-mode"
-    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: []
     projectHome: "~/Projects"
@@ -22,16 +21,21 @@
       "base16-tomorrow-dark-theme"
     ]
   editor:
-    fontSize: 17
+    fontSize: 18
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
   "fold-functions":
     skipAutofoldWhenNotFirstLine: true
   gist:
-    token: "d6ef90ae77c4e5993e8917dd3856006f281f1507"
+    token: "b97c2360e7d067c15e446bf6bc8bc92dc3c6ef16"
   "nav-panel-plus":
     leftPanel: true
+  navigate:
+    dblclk: true
+    f1: "http://devdocs.io/#q=&searchterm"
+    f10: "https://duckduckgo.com/?q=&searchterm"
+    f6: "http://www.bing.com/search?q=&searchterm"
   "platformio-ide-terminal":
     style:
       defaultPanelHeight: "600px"
@@ -41,7 +45,6 @@
     personalAccessToken: "3e62618be1122de00aa90e0237688c5ce548ce1c"
   "terminal-plus":
     core: {}
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false
