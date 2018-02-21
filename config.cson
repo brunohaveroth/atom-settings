@@ -40,6 +40,9 @@
   "platformio-ide-terminal":
     style:
       defaultPanelHeight: "600px"
+  "project-viewer":
+    autoHide: true
+    panelPosition: "Left (first)"
   "sync-settings":
     gistDescription: "Atom Sync"
     gistId: "83d5932a995c7272d6ba79d088b740b0"

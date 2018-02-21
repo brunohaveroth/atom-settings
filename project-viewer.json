@@ -1,0 +1,78 @@
+{
+  "info": {
+    "version": "1.0.15",
+    "updated": "2018-02-20T11:13:42.537Z"
+  },
+  "root": [
+    {
+      "type": "group",
+      "name": "Nela",
+      "sortBy": "position",
+      "icon": "icon-eye-unwatch",
+      "color": "#2ba84a",
+      "expanded": true,
+      "list": [
+        {
+          "type": "project",
+          "name": "AVD",
+          "icon": "devicons-brackets",
+          "color": "#2ba84a",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/avd/avd-talentrh",
+            "/home/bruno.haveroth/projects/avd/avd-talentrh-api"
+          ]
+        },
+        {
+          "type": "project",
+          "name": "Treinamento",
+          "icon": "devicons-brackets",
+          "color": "#2ba84a",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/talentrh-treinamento/talentrh-treinamento",
+            "/home/bruno.haveroth/projects/talentrh-treinamento/talentrh-treinamento-api"
+          ]
+        },
+        {
+          "type": "project",
+          "name": "Acesso",
+          "icon": "devicons-brackets",
+          "color": "#2ba84a",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/acesso-talent/acesso-talentrh",
+            "/home/bruno.haveroth/projects/acesso-talent/acesso-talentrh-api"
+          ]
+        },
+        {
+          "type": "project",
+          "name": "Conta",
+          "icon": "devicons-brackets",
+          "color": "#2ba84a",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/account-talentrh/account-talentrh",
+            "/home/bruno.haveroth/projects/account-talentrh/account-talentrh-api"
+          ]
+        },
+        {
+          "type": "project",
+          "name": "Nela",
+          "icon": "devicons-brackets",
+          "color": "#2ba84a",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/portal-talent/portal-talentrh",
+            "/home/bruno.haveroth/projects/portal-talent/portal-talentrh-api"
+          ]
+        }
+      ]
+    }
+  ]
+}

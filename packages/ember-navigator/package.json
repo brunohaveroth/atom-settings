@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11805-18051-188xna9.s20p69lik9/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11805-18051-188xna9.s20p69lik9/package.tgz",
+        "spec": "/tmp/d-11805-18051-188xna9.s20p69lik9/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11805-18051-j019qk.tyo3x72e29"
+    ]
+  ],
+  "_from": "../d-11805-18051-188xna9.s20p69lik9/package.tgz",
+  "_id": "ember-navigator@0.8.1",
+  "_inCache": true,
+  "_location": "/ember-navigator",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11805-18051-188xna9.s20p69lik9/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11805-18051-188xna9.s20p69lik9/package.tgz",
+    "spec": "/tmp/d-11805-18051-188xna9.s20p69lik9/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11805-18051-188xna9.s20p69lik9/package.tgz",
+  "_shasum": "add717bffc55cdc0d634c3af7f07dd2d017ab0a6",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11805-18051-188xna9.s20p69lik9/package.tgz",
+  "_where": "/tmp/apm-install-dir-11805-18051-j019qk.tyo3x72e29",
+  "activationCommands": {
+    "atom-workspace": [
+      "ember-navigator:toggleComponent",
+      "ember-navigator:toggleInspector"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/mikoscz/ember-navigator/issues"
+  },
+  "dependencies": {},
+  "description": "Simplify work with ember components",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/mikoscz/ember-navigator#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "./lib/ember-navigator",
+  "name": "ember-navigator",
+  "optionalDependencies": {},
+  "readme": "# Ember Navigator\n\nPackage for Atom Editor which allow you to easy navigate through EmberJS files.\n\n![Ember Navigator](https://cloud.githubusercontent.com/assets/12214867/18238425/2a326f82-733d-11e6-843e-58c220dc79bb.jpg)\n\n# How to use?\n\n1. Switching between component's template and logic (component.js <=> template.hbs)\n\n> cmd + ctrl + ,\n\n1. Open component source when cursor is on component name\n\n> cmd + ctrl + .\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikoscz/ember-navigator.git"
+  },
+  "version": "0.8.1",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".js": [
+        "lib/ember-navigator-view.js",
+        "lib/ember-navigator.js",
+        "lib/inspector/component-inspector.js",
+        "lib/toggler/component-toggler.js"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
