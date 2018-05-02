@@ -12,6 +12,10 @@
   core:
     closeEmptyWindows: false
     destroyEmptyPanes: false
+    disabledPackages: [
+      "status-bar"
+      "linter"
+    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: []
     projectHome: "~/Projects"
@@ -23,6 +27,7 @@
   editor:
     fontFamily: "Ubuntu Mono"
     fontSize: 17
+    preferredLineLength: 8000
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
@@ -42,6 +47,8 @@
       defaultPanelHeight: "600px"
   "project-viewer":
     autoHide: true
+    disclaimer:
+      v131: false
     panelPosition: "Left (first)"
   "spotify-linux": {}
   "sync-settings":

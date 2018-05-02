@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-118018-5197-m3qxnr.kc8r529/package.tgz",
+        "raw": "/tmp/d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-118018-5197-m3qxnr.kc8r529/package.tgz",
-        "spec": "/tmp/d-118018-5197-m3qxnr.kc8r529/package.tgz",
+        "rawSpec": "/tmp/d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
+        "spec": "/tmp/d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-118018-5197-ry1jot.qal594quxr"
+      "/tmp/apm-install-dir-118219-19270-1dw55g1.7gjhc15rk9"
     ]
   ],
-  "_from": "../d-118018-5197-m3qxnr.kc8r529/package.tgz",
-  "_id": "project-viewer@1.2.5",
+  "_from": "../d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
+  "_id": "project-viewer@1.3.1",
   "_inCache": true,
   "_location": "/project-viewer",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-118018-5197-m3qxnr.kc8r529/package.tgz",
+    "raw": "/tmp/d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-118018-5197-m3qxnr.kc8r529/package.tgz",
-    "spec": "/tmp/d-118018-5197-m3qxnr.kc8r529/package.tgz",
+    "rawSpec": "/tmp/d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
+    "spec": "/tmp/d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-118018-5197-m3qxnr.kc8r529/package.tgz",
-  "_shasum": "f2cb7beff2db10fabca1716c9c0b7a15f53a244a",
+  "_resolved": "file:../d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
+  "_shasum": "9e30f8dd3d73dad9216556497817e1e84e894621",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-118018-5197-m3qxnr.kc8r529/package.tgz",
-  "_where": "/tmp/apm-install-dir-118018-5197-ry1jot.qal594quxr",
+  "_spec": "/tmp/d-118219-19270-my6hg7.3y13lyp66r/package.tgz",
+  "_where": "/tmp/apm-install-dir-118219-19270-1dw55g1.7gjhc15rk9",
   "bugs": {
     "url": "https://github.com/jccguimaraes/atom-project-viewer/issues"
   },
@@ -54,8 +54,8 @@
     "all-contributors-cli": "latest"
   },
   "engines": {
-    "atom": ">=1.18.0",
-    "node": ">=6.5.0"
+    "atom": ">=1.25.0",
+    "node": ">=7.9.0"
   },
   "homepage": "https://github.com/jccguimaraes/atom-project-viewer#readme",
   "keywords": [
@@ -75,115 +75,23 @@
     "type": "git",
     "url": "git+https://github.com/jccguimaraes/atom-project-viewer.git"
   },
-  "version": "1.2.5",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [
-      {
-        "name": "atom-select-list",
-        "version": "0.7.0",
-        "path": "node_modules/atom-select-list/src/select-list-view.js"
+  "version": "1.3.1",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">=7.9.0",
+        "atom": ">=1.25.0"
       },
-      {
-        "name": "etch",
-        "version": "0.12.8",
-        "path": "node_modules/etch/lib/index.js"
-      },
-      {
-        "name": "fuzzaldrin",
-        "version": "2.1.0",
-        "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
-      }
-    ],
-    "extensions": {
-      ".json": [
-        "contribution.json",
-        "node_modules/atom-select-list/package.json",
-        "node_modules/devicons/package.json",
-        "node_modules/devicons/selection.json",
-        "node_modules/etch/package.json",
-        "node_modules/fuzzaldrin/package.json",
-        "package.json",
-        "src/json/devicons.json",
-        "src/json/octicons.json",
-        "src/json/release-notes.json"
-      ],
-      ".js": [
-        "node_modules/atom-select-list/src/select-list-view.js",
-        "node_modules/etch/dist/component-helpers.js",
-        "node_modules/etch/dist/default-scheduler.js",
-        "node_modules/etch/dist/dom.js",
-        "node_modules/etch/dist/event-listener-props.js",
-        "node_modules/etch/dist/index.js",
-        "node_modules/etch/dist/patch.js",
-        "node_modules/etch/dist/render.js",
-        "node_modules/etch/dist/scheduler-assignment.js",
-        "node_modules/etch/dist/svg-attribute-translations.js",
-        "node_modules/etch/dist/svg-tags.js",
-        "node_modules/etch/dist/update-props.js",
-        "node_modules/etch/lib/component-helpers.js",
-        "node_modules/etch/lib/default-scheduler.js",
-        "node_modules/etch/lib/dom.js",
-        "node_modules/etch/lib/event-listener-props.js",
-        "node_modules/etch/lib/index.js",
-        "node_modules/etch/lib/patch.js",
-        "node_modules/etch/lib/render.js",
-        "node_modules/etch/lib/scheduler-assignment.js",
-        "node_modules/etch/lib/svg-attribute-translations.js",
-        "node_modules/etch/lib/svg-tags.js",
-        "node_modules/etch/lib/update-props.js",
-        "node_modules/fuzzaldrin/lib/filter.js",
-        "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
-        "node_modules/fuzzaldrin/lib/matcher.js",
-        "node_modules/fuzzaldrin/lib/scorer.js",
-        "src/api.js",
-        "src/colours.js",
-        "src/common.js",
-        "src/config.js",
-        "src/constants.js",
-        "src/database.js",
-        "src/db.js",
-        "src/dom-builder.js",
-        "src/editor-view.js",
-        "src/group-view.js",
-        "src/main-view.js",
-        "src/main.js",
-        "src/map.js",
-        "src/model.js",
-        "src/packages.js",
-        "src/project-view.js",
-        "src/projects-list-view.js",
-        "src/projects-list.js",
-        "src/status-bar.js",
-        "src/workers/github.js"
-      ]
+      "pkgid": "project-viewer@1.3.1"
     },
-    "folders": [
-      {
-        "paths": [
-          "",
-          "keymaps",
-          "menus",
-          "spec",
-          "src",
-          "src/json",
-          "src/workers"
-        ],
-        "dependencies": {
-          "devicons": "1.8.0"
-        }
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">=7.9.0",
+        "atom": ">=1.25.0"
       },
-      {
-        "paths": [
-          "node_modules/atom-select-list",
-          "node_modules/atom-select-list/src",
-          "node_modules/atom-select-list/test"
-        ],
-        "dependencies": {
-          "etch": "^0.12.6",
-          "fuzzaldrin": "^2.1.0"
-        }
-      }
-    ]
-  }
+      "pkgid": "project-viewer@1.3.1"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "info": {
     "version": "1.0.15",
-    "updated": "2018-02-20T11:13:42.537Z"
+    "updated": "2018-04-26T14:33:00.308Z"
   },
   "root": [
     {
@@ -68,8 +68,19 @@
           "devMode": false,
           "config": {},
           "paths": [
-            "/home/bruno.haveroth/projects/portal-talent/portal-talentrh",
             "/home/bruno.haveroth/projects/portal-talent/portal-talentrh-api"
+          ]
+        },
+        {
+          "type": "project",
+          "name": "Gestor",
+          "icon": "devicons-brackets",
+          "color": "#2ba84a",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/gestor-projetos/gestor-projetos",
+            "/home/bruno.haveroth/projects/gestor-projetos/gestor-projetos-api"
           ]
         }
       ]
