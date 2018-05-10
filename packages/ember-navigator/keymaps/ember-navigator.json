@@ -1,6 +1,0 @@
-{
-  "atom-workspace": {
-    "cmd-ctrl-,": "ember-navigator:toggleComponent",
-    "cmd-ctrl-.": "ember-navigator:toggleInspector"
-  }
-}

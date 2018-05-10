@@ -12,10 +12,6 @@
   core:
     closeEmptyWindows: false
     destroyEmptyPanes: false
-    disabledPackages: [
-      "status-bar"
-      "linter"
-    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: []
     projectHome: "~/Projects"
@@ -26,7 +22,7 @@
     ]
   editor:
     fontFamily: "Ubuntu Mono"
-    fontSize: 17
+    fontSize: 16
     preferredLineLength: 8000
     showIndentGuide: true
   "exception-reporting":

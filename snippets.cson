@@ -1,19 +1,16 @@
 '.source.js':
-  'this.set':
+  'set':
     'prefix': 'set'
-    'body': "this.set('$1', $2);"
-  'this.get':
+    'body': "set(this, '$2', $3);"
+  'get':
     'prefix': 'get'
-    'body': "this.get('$1');"
-  'transitionTo':
-    'prefix': 'transitionto'
-    'body': "this.transitionTo('$1');"
-  'transitionToRoute':
-    'prefix': 'transitiontr'
-    'body': "this.transitionToRoute('$1');"
-  'Ember.inject.service':
-    'prefix': 'injectService'
-    'body': "Ember.inject.service('$1')"
+    'body': "get(this, '$2');"
+  'impO':
+    'prefix': 'impO'
+    'body': "import { $1 } from '@ember/object'"
+  'impS':
+    'prefix': 'impS'
+    'body': "import { $1 } from '@ember/service'"
   'importSwalError':
     'prefix': 'importSwalError'
     'body': "import swalError from '$1/utils/swal-error';"
