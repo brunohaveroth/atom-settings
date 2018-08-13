@@ -1,0 +1,29 @@
+/*------------- #POSTS --------------*/
+
+
+
+.post {
+  position: relative;
+  padding: 25px;
+  border-bottom: 1px solid $border-color;
+
+  .post-images-container {
+    margin-bottom: 20px;
+
+    .post-images {
+      margin: auto;
+
+      .portfolio-item {
+        float: left;
+        padding-right: 0;
+
+        img {
+          height: 200px;
+          margin: 0 auto;
+          display: block;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

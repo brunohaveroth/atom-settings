@@ -1,0 +1,105 @@
+<div class="modal" id="modal-message"  data-backdrop="static" data-keyboard="false">
+
+	<div class="modal-dialog modal-lg ui-block ">
+	<div class="modal-content">
+		<a href="#" class="close icon-close" {{action 'cancel'}}>
+			<i class="fa fa-close"></i>
+		</a>
+
+		<div class="ui-block-title">
+			<h6 class="title">Nova Ausência</h6>
+		</div>
+
+		<div class="ui-block-content">
+			<div class="row">
+				{{#if model.accessProfileUser.permitUserMessageCreate}}
+					<div class="col-sm-12">
+	          <div class="form-group label-floating">
+	            {{input-select2 class="form-control" placeholder='Selecione o usuário' endpoint='/users/ajax' ajax=true selected=model.newMessage.user}}
+	            <label class="control-label">Usuário Responsável</label>
+	          </div>
+	        </div>
+				{{/if}}
+
+				<div class="col-lg-12">
+
+
+						<div class="form-group label-floating">
+							<label class="control-label">{{t "title"}}</label> {{input value=model.newMessage.title name=contact class="form-control"}}
+							<span class="material-input"></span>
+						</div>
+
+
+					{{#input-datepair id="#messageDatepair" startDate=start endDate=end}}
+						<div id="messageDatepair">
+							<div class="row">
+								<div class="col-sm-9">
+									<div class="form-group label-floating is-focused">
+										{{input type="text" class="form-control date start" required=true}}
+										<label class="control-label">{{t "initialDate"}}</label>
+									</div>
+								</div>
+
+								<div class="col-sm-3">
+									<div class="form-group label-floating is-focused">
+										{{input name="horaIni" class="form-control time start" required=true}}
+										<label class="control-label" for="horaIni">Hora inicial</label>
+									</div>
+								</div>
+
+								<div class="col-sm-9">
+									<div class="form-group label-floating is-focused">
+										{{input type="text" class="form-control date end" required=true}}
+										<label class="control-label">{{t "endDate"}}</label>
+									</div>
+								</div>
+
+								<div class="col-sm-3">
+									<div class="form-group label-floating is-focused">
+										{{input type="text" class="form-control time end" required=true}}
+										<label class="control-label" for="horaFin">Hora final</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					{{/input-datepair}}
+
+					<div class="form-group label-floating">
+						<label class="control-label">{{t "contact"}}</label> {{input value=model.newMessage.contact name=contact class="form-control"}}
+						<span class="material-input"></span>
+					</div>
+
+
+					<div class="form-group label-floating">
+						<label class="control-label">Motivo da ausência</label>
+						{{input-select2 placeholder='Razão' endpoint='/reasons/ajax' selected=model.newMessage.reason ajax=true class="form-control dirty"}}
+						<span class="material-input"></span>
+					</div>
+
+
+					<div class="form-group label-floating">
+						<label class="control-label">{{t "description"}}</label> {{textarea value=model.newMessage.description name=description rows="3" class="form-control"}}
+						<span class="material-input"></span>
+					</div>
+
+					{{#unless model.id}}
+						<div class="checkbox clicked">
+							<label>
+									{{input checked=generateCommitment type="checkbox"}}<span class="checkbox-material"><span class="check"></span></span>
+									{{t "generateCommitment"}}
+								</label>
+						</div>
+					{{/unless}}
+
+				</div>
+			</div>
+			<br>
+			<div class="align-right">
+				<button class="btn btn-danger btn-md-2" {{action 'cancel'}}>Cancelar</button>
+				<button {{action 'saveMessage'}} class="btn btn-blue btn-md-2">{{t "save"}}</button>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</div>

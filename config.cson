@@ -8,8 +8,10 @@
   "atom-package-deps":
     ignored: [
       "linter"
+      "linter-scss-lint"
     ]
   core:
+    autoHideMenuBar: true
     closeEmptyWindows: false
     destroyEmptyPanes: false
     openEmptyEditorOnStart: false
@@ -22,8 +24,9 @@
     ]
   editor:
     fontFamily: "Ubuntu Mono"
-    fontSize: 16
+    fontSize: 18
     preferredLineLength: 8000
+    scrollPastEnd: true
     showIndentGuide: true
   "exception-reporting":
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
