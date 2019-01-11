@@ -1,0 +1,499 @@
+# Ember Functions snippets
+#
+# Examples
+#
+#  `ember<tab>`
+#
+
+'.source.js, .source.ts':
+  'run(() => { ... })':
+    'prefix': 'run'
+    'leftLabel': 'Ember'
+    'body':"""
+      run(() => {
+      \t${1}
+      });
+    """
+  #
+  #
+  # Ember Object Snippets
+  #
+  'let ... get(...)':
+    'prefix': 'lget'
+    'leftLabel': 'Ember'
+    'body': 'let $1 = ${2:this}.get(\'$1\');'
+
+  '.set(...)':
+    'prefix': 'set'
+    'leftLabel': 'Ember'
+    'body': "${1:this}.set('${2}', ${3});"
+
+  '.get(...)':
+    'prefix': 'get'
+    'leftLabel': 'Ember'
+    'body': "${1:this}.get('${2}');"
+
+  'this._super(...)':
+    'prefix': 'super'
+    'leftLabel': 'Ember'
+    'body': 'this._super(...arguments);'
+
+  'init() { ... }':
+    'prefix': 'init'
+    'leftLabel': 'Ember'
+    'body':"""
+      init() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+    """
+
+  'service(...)':
+    'prefix': 'service'
+    'leftLabel': 'Ember'
+    'body': 'service(${1}),'
+
+  'observer(...)':
+    'prefix': 'observer'
+    'leftLabel': 'Ember'
+    'body': """
+      observer('${1:property}', function() {
+      \t${2:// body}
+      }),
+    """
+
+  'on(...)':
+    'prefix': 'on'
+    'leftLabel': 'Ember'
+    'body': """
+      on('${1:property}', function() {
+      \t${2:// body}
+      }),
+    """
+
+  'actions: { ... }':
+    'prefix': 'actions'
+    'leftLabel': 'Ember'
+    'body': """
+      actions: {
+      \t${1:// body}
+      }
+    """
+
+  #
+  # Computeds!
+  #
+  'computed(...)':
+    'prefix': 'computed'
+    'leftLabel': 'Ember'
+    'body': """
+      computed('${1:property}', function() {
+      \t${2:// body}
+      }),
+    """
+
+  'alias(...)':
+    'prefix': 'calias'
+    'leftLabel': 'Ember Computed'
+    'body': "alias('${1:key}');"
+
+  'and(...)':
+    'prefix': 'cand'
+    'leftLabel': 'Ember Computed'
+    'body': "and('${1:key1}', '${2:key2}');"
+
+  'bool(...)':
+    'prefix': 'cbool'
+    'leftLabel': 'Ember Computed'
+    'body': "bool(${1:key});"
+
+  'collect(...)':
+    'prefix': 'ccollect'
+    'leftLabel': 'Ember Computed'
+    'body': "collect(${1:keys});"
+
+  'empty(...)':
+    'prefix': 'cempty'
+    'leftLabel': 'Ember Computed'
+    'body': "empty('${1:key}');"
+
+  'equal(...)':
+    'prefix': 'cequal'
+    'leftLabel': 'Ember Computed'
+    'body': "equal('${1:key}', ${2:value});"
+
+  'filter(...)':
+    'prefix': 'cfilter'
+    'leftLabel': 'Ember Computed'
+    'body': """
+      filter(${1:key}, function(${2:item}${3:, index}) {
+        return ${2:item};
+      }));
+    """
+
+  'filterBy(...)':
+    'prefix': 'cfilterBy'
+    'leftLabel': 'Ember Computed'
+    'body': "filterBy('${1:key}', ${2:propertyKey}, ${3:value});"
+
+  'gt(...)':
+    'prefix': 'cgt'
+    'leftLabel': 'Ember Computed'
+    'body': "gt('${1:key}', ${2:value});"
+
+  'gte(...)':
+    'prefix': 'cgte'
+    'leftLabel': 'Ember Computed'
+    'body': "gte('${1:key}', ${2:value});"
+
+  'intersect(...)':
+    'prefix': 'intersect'
+    'leftLabel': 'Ember Computed'
+    'body': "intersect('${1:key1}', '${2:key2}');"
+
+  'lt(...)':
+    'prefix': 'clt'
+    'leftLabel': 'Ember Computed'
+    'body': "lt('${1:key}', ${2:value});"
+
+  'lte(...)':
+    'prefix': 'clte'
+    'leftLabel': 'Ember Computed'
+    'body': "lte('${1:key}', ${2:value});"
+
+  'map(...)':
+    'prefix': 'cmap'
+    'leftLabel': 'Ember Computed'
+    'body': """
+      map(${1:key}, function(${2:item}${3:, index}) {
+        return ${2:item};
+      }));
+    """
+
+  'mapBy(...)':
+    'prefix': 'cmapBy'
+    'leftLabel': 'Ember Computed'
+    'body': "mapBy('${1:key}', '${2:propertyKey}');"
+
+  'match(...)':
+    'prefix': 'cmatch'
+    'leftLabel': 'Ember Computed'
+    'body': "match('${1:key}', ${2:regEx});"
+
+  'max(...)':
+    'prefix': 'cmax'
+    'leftLabel': 'Ember Computed'
+    'body': "max('${1:key}');"
+
+  'min(...)':
+    'prefix': 'cmin'
+    'leftLabel': 'Ember Computed'
+    'body': "min('${1:key}');"
+
+  'none(...)':
+    'prefix': 'cnone'
+    'leftLabel': 'Ember Computed'
+    'body': "none('${1:key}');"
+
+  'not(...)':
+    'prefix': 'cnot'
+    'leftLabel': 'Ember Computed'
+    'body': "not('${1:key}');"
+
+  'notEmpty(...)':
+    'prefix': 'cnotEmpty'
+    'leftLabel': 'Ember Computed'
+    'body': "notEmpty('${1:key}');"
+
+  'oneWay(...)':
+    'prefix': 'coneWay'
+    'leftLabel': 'Ember Computed'
+    'body': "oneWay('${1:key}');"
+
+  'or(...)':
+    'prefix': 'cor'
+    'leftLabel': 'Ember Computed'
+    'body': "or('${1:key1}', '${2:key2}');"
+
+  'readOnly(...)':
+    'prefix': 'creadOnly'
+    'leftLabel': 'Ember Computed'
+    'body': "readOnly('${1:key}');"
+
+  'reads(...)':
+    'prefix': 'creads'
+    'leftLabel': 'Ember Computed'
+    'body': "reads('${1:key}');"
+
+  'setDiff(...)':
+    'prefix': 'csetDiff'
+    'leftLabel': 'Ember Computed'
+    'body': "setDiff('${1:key1}', '${2:key2}');"
+
+  'sort(...)':
+    'prefix': 'csort'
+    'leftLabel': 'Ember Computed'
+    'body': "sort('${1:itemsKey}', '${2:sortDefinition}');"
+
+  'sum(...)':
+    'prefix': 'csum'
+    'leftLabel': 'Ember Computed'
+    'body': "sum('${1:key}');"
+
+  'union(...)':
+    'prefix': 'cunion'
+    'leftLabel': 'Ember Computed'
+    'body': "union('${1:key1}', '${2:key2}');"
+
+  'uniq(...)':
+    'prefix': 'cuniq'
+    'leftLabel': 'Ember Computed'
+    'body': "uniq('${1:key}', '${2:propertyKey}');"
+
+  'uniqBy(...)':
+    'prefix': 'cuniqBy'
+    'leftLabel': 'Ember Computed'
+    'body': "uniqBy('${1:key}');"
+
+  #
+  #
+  # runloop
+  #
+  'bind(...)':
+    'prefix': 'bind'
+    'leftLabel': 'Ember'
+    'body': "bind(${1:this}, ${2:this.methodName});"
+
+  'cancel(...)':
+    'prefix': 'cancel'
+    'leftLabel': 'Ember'
+    'body': "cancel('${1:key}');"
+
+  'debounce(...)':
+    'prefix': 'debounce'
+    'leftLabel': 'Ember'
+    'body': "debounce(${1:this}, '${2:methodName}', ${3:500});"
+
+  'later(...)':
+    'prefix': 'later'
+    'leftLabel': 'Ember'
+    'body': "later(${1:this}, () => { ${2}\\}, ${3:500});"
+
+  'next(...)':
+    'prefix': 'next'
+    'leftLabel': 'Ember'
+    'body': "next(${1:this}, () => { ${2}\\});"
+
+  'once(...)':
+    'prefix': 'once'
+    'leftLabel': 'Ember'
+    'body': "once(${1:this}, () => { ${2}\\});"
+
+  'run(...)':
+    'prefix': 'run'
+    'leftLabel': 'Ember'
+    'body': "run(() => { ${1}\\});"
+
+  'schedule(...)':
+    'prefix': 'schedule'
+    'leftLabel': 'Ember'
+    'body': "schedule('${1:queue}', ${2:this}, () => { ${3}\\}, );"
+
+  'scheduleOnce(...)':
+    'prefix': 'scheduleOnce'
+    'leftLabel': 'Ember'
+    'body': "scheduleOnce('${1:queue}', ${2:this}, () => { ${3}\\}, );"
+
+  'throttle(...)':
+    'prefix': 'throttle'
+    'leftLabel': 'Ember'
+    'body': "throttle(${1:this}, '${2:methodName}', ${3:500});"
+
+
+  #
+  #
+  # Route Snippets
+  #
+  'Route: model(...) { ... }':
+    'prefix': 'model'
+    'leftLabel': 'Ember'
+    'body': """
+      model(params = {}) {
+      \treturn this.store.query('${1}', params);
+      },
+    """
+
+  'Route: setupController(...) { ... }':
+    'prefix': 'setupController'
+    'leftLabel': 'Ember'
+    'body':"""
+      setupController(controller, model) {
+      \tthis._super(controller, model);
+      \t${1}
+      },
+
+    """
+
+  'Route: beforeModel(...) { ... }':
+    'prefix': 'beforeModel'
+    'leftLabel': 'Ember'
+    'body':"""
+      beforeModel(transition) {
+      \tthis._super(controller, model);
+      \t${1}
+      },
+
+    """
+
+  'Route: afterModel(...) { ... }':
+    'prefix': 'afterModel'
+    'leftLabel': 'Ember'
+    'body':"""
+      afterModel(model, transition) {
+      \tthis._super(controller, model);
+      \t${1}
+      },
+
+    """
+
+  #
+  #
+  # Component Snippets
+  #
+  'Component: didReceiveAttrs() { ... }':
+    'prefix': 'didReceiveAttrs'
+    'leftLabel': 'Ember'
+    'body':"""
+      didReceiveAttrs() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+
+    """
+
+  'Component: didRender() { ... }':
+    'prefix': 'didRender'
+    'leftLabel': 'Ember'
+    'body':"""
+      didRender() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+    """
+
+  'Component: didUpdateAttrs() { ... }':
+    'prefix': 'didUpdateAttrs'
+    'leftLabel': 'Ember'
+    'body':"""
+      didUpdateAttrs() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+    """
+
+  'Component: willUpdate() { ... }':
+    'prefix': 'willUpdate'
+    'leftLabel': 'Ember'
+    'body':"""
+      willUpdate() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+    """
+
+  'Component: didInsertElement() { ... }':
+    'prefix': 'didInsertElement'
+    'leftLabel': 'Ember'
+    'body':"""
+      didInsertElement() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+    """
+
+  'Component: willDestroyElement() { ... }':
+    'prefix': 'willDestroyElement'
+    'leftLabel': 'Ember'
+    'body':"""
+      willDestroyElement() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+    """
+
+  'Component: willClearElement() { ... }':
+    'prefix': 'willClearElement'
+    'leftLabel': 'Ember'
+    'body':"""
+      willClearElement() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+    """
+
+  'Component: didDestroyElement() { ... }':
+    'prefix': 'didDestroyElement'
+    'leftLabel': 'Ember'
+    'body':"""
+      didDestroyElement() {
+      \tthis._super(...arguments);
+      \t${1}
+      },
+    """
+
+  #
+  #
+  # Enumerables
+  #
+  '.filterBy(...)':
+    'prefix': 'filterBy'
+    'leftLabel': 'Ember Enumerable'
+    'body': "${1:enumerable}.filterBy('${2:property}', ${3:value});"
+
+  '.mapBy(...)':
+    'prefix': 'mapBy'
+    'leftLabel': 'Ember Enumerable'
+    'body': "${1:enumerable}.mapBy('${2:property}');"
+
+  '.every(...)':
+    'prefix': 'every'
+    'leftLabel': 'Ember Enumerable'
+    'body': """
+      ${1:enumerable}.every(function(${2:item}) {
+      \t${3}
+      });
+    """
+
+  '.isEvery(...)':
+    'prefix': 'is-every'
+    'leftLabel': 'Ember Enumerable'
+    'body': "${1:enumerable}.isEvery('${2:property}', ${3:bool});"
+
+  '.some(...)':
+    'prefix': 'some'
+    'leftLabel': 'Ember Enumerable'
+    'body': """
+      ${1:enumerable}.some(function(${2:item}) {
+      \t${3}
+      });
+    """
+
+  '.isAny(...)':
+    'prefix': 'is-any'
+    'leftLabel': 'Ember Enumerable'
+    'body': "${1:enumerable}.isAny('${2:property}', ${3:bool});"
+
+  '.toArray(...)':
+    'prefix': 'to-array'
+    'leftLabel': 'Ember Enumerable'
+    'body': '${1:enumerable}.toArray();'
+
+  '.get(\'firstObject\')':
+    'prefix': 'first-object'
+    'leftLabel': 'Ember Enumerable'
+    'body': "${1:enumerable}.get('firstObject');"
+
+  '.get(\'lastObject\')':
+    'prefix': 'last-object'
+    'leftLabel': 'Ember Enumerable'
+    'body': "${1:enumerable}.get('lastObject');"

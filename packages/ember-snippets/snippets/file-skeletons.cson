@@ -1,0 +1,211 @@
+# Ember Modules snippets
+#
+# Examples
+#
+#  `ember<tab>`
+#
+
+'.source.js, .source.ts':
+
+  'Route Skeleton':
+    'prefix': 'route'
+    'leftLabel': 'Ember'
+    'body': """
+      import Route from '@ember/routing/route';
+
+      export default Route.extend({
+
+      \tmodel() {
+      \t\t${1:// body}
+      \t}
+
+      });
+    """
+
+  'Controller Skeleton':
+    'prefix': 'controller'
+    'leftLabel': 'Ember'
+    'body': """
+      import Controller from '@ember/controller';
+
+      export default Controller.extend({
+      \t${1:// body}
+      });
+    """
+
+  'Service Skeleton':
+    'prefix': 'service'
+    'leftLabel': 'Ember'
+    'body': """
+      import Service from '@ember/service';
+
+      export default Service.extend({
+      \t${1:// body}
+      });
+    """
+
+  'Component Skeleton':
+    'prefix': 'component'
+    'leftLabel': 'Ember'
+    'body': """
+      import Component from '@ember/component';
+
+      export default Component.extend({
+      \t${1:// body}
+      });
+    """
+
+  'Mixin Skeleton':
+    'prefix': 'mixin'
+    'leftLabel': 'Ember'
+    'body': """
+      import Mixin from '@ember/object/mixin';
+
+      export default Mixin.create({
+      \t${1:// body}
+      });
+    """
+
+  'Object Skeleton':
+    'prefix': 'object'
+    'leftLabel': 'Ember'
+    'body': """
+      import EmberObject from '@ember/object';
+
+      export default EmberObject.extend({
+      \t${1:// body}
+      });
+    """
+
+  'Bound Helper Skeleton':
+    'prefix': 'bound-helper'
+    'leftLabel': 'Ember'
+    'body': """
+      import Ember from 'ember';
+
+      export default Ember.Handlebars.makeBoundHelper(function() {
+      \t${1:// body}
+      });
+    """
+
+  'Helper Skeleton':
+    'prefix': 'helper'
+    'leftLabel': 'Ember'
+    'body': """
+      import Helper from '@ember/component/helper';
+
+      export default Helper.extend({
+      \tcompute() {
+      \t\t${1:// body}
+      \t}
+      });
+    """
+
+  'Model Skeleton':
+    'prefix': 'model'
+    'leftLabel': 'Ember'
+    'body': """
+      import DS from 'ember-data';
+
+      export default DS.Model.extend({
+      \t${1:// body}
+      });
+    """
+
+  'REST Adapter Skeleton':
+    'prefix': 'adapter'
+    'leftLabel': 'Ember'
+    'body': """
+      import DS from 'ember-data';
+
+      export default DS.RESTAdapter.extend({
+      \t${1:// body}
+      });
+    """
+
+  'Active Model Adapter Skeleton':
+    'prefix': 'active-adapter'
+    'leftLabel': 'Ember'
+    'body': """
+      import DS from 'ember-data';
+
+      export default DS.ActiveModelAdapter.extend({
+      \t${1:// body}
+      });
+    """
+
+  'JSON API Adapter Skeleton':
+    'prefix': 'jsonapi-adapter'
+    'leftLabel': 'Ember'
+    'body': """
+      import DS from 'ember-data';
+
+      export default DS.JSONAPIAdapter.extend({
+      \t${1:// body}
+      });
+    """
+
+  'REST Serializer Skeleton':
+    'prefix': 'serializer'
+    'leftLabel': 'Ember'
+    'body': """
+      import DS from 'ember-data';
+
+      export default DS.RESTSerializer.extend({
+      \t${1:// body}
+      });
+    """
+
+  'Active Model Serializer Skeleton':
+    'prefix': 'active-serializer'
+    'leftLabel': 'Ember'
+    'body': """
+      import DS from 'ember-data';
+
+      export default DS.ActiveModelSerializer.extend({
+      \t${1:// body}
+      });
+    """
+
+  'JSON API Serializer Skeleton':
+    'prefix': 'jsonapi-serializer'
+    'leftLabel': 'Ember'
+    'body': """
+      import DS from 'ember-data';
+
+      export default DS.JSONAPISerializer.extend({
+      \t${1:// body}
+      });
+    """
+
+  'Transform Serializer Skeleton':
+    'prefix': 'transform'
+    'leftLabel': 'Ember'
+    'body': """
+      import DS from 'ember-data';
+
+      export default DS.Transforms.extend({
+      \t${1:// body}
+      });
+    """
+
+  'Initializer Skeleton':
+    'prefix': 'initializer'
+    'leftLabel': 'Ember'
+    'body': """
+      export default {
+      \tname: '${1:name}',
+      \tinitialize: function() {
+      \t\t${2:// body}
+      \t}
+      };
+    """
+
+  'Utility Skeleton':
+    'prefix': 'utility'
+    'leftLabel': 'Ember'
+    'body': """
+      export default function ${1:myUtility}() {
+      \t${2:// body}
+      };
+    """

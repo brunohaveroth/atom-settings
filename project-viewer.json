@@ -1,7 +1,7 @@
 {
   "info": {
     "version": "1.0.15",
-    "updated": "2018-05-25T18:42:16.567Z"
+    "updated": "2018-12-11T13:17:19.369Z"
   },
   "root": [
     {
@@ -14,27 +14,14 @@
       "list": [
         {
           "type": "project",
-          "name": "AVD",
-          "icon": "devicons-brackets",
-          "color": "#2ba84a",
-          "devMode": false,
-          "config": {},
-          "paths": [
-            "/home/bruno.haveroth/projects/avd/avd-talentrh",
-            "/home/bruno.haveroth/projects/avd/avd-talentrh-api"
-          ]
-        },
-        {
-          "type": "project",
           "name": "Treinamento",
           "icon": "devicons-brackets",
           "color": "#2ba84a",
           "devMode": false,
           "config": {},
           "paths": [
-            "/home/bruno.haveroth/projects/talentrh-treinamento/talentrh-treinamento",
-            "/home/bruno.haveroth/projects/talentrh-treinamento/talentrh-treinamento-api",
-            "/home/bruno.haveroth/projects/migrations-talentrh"
+            "/home/bruno.haveroth/projects/treinamento/talentrh-treinamento",
+            "/home/bruno.haveroth/projects/treinamento/talentrh-treinamento-api"
           ]
         },
         {
@@ -57,8 +44,8 @@
           "devMode": false,
           "config": {},
           "paths": [
-            "/home/bruno.haveroth/projects/account-talentrh/account-talentrh",
-            "/home/bruno.haveroth/projects/talentrh-components"
+            "/home/bruno.haveroth/projects/conta/account-talentrh",
+            "/home/bruno.haveroth/projects/conta/account-talentrh-api"
           ]
         },
         {
@@ -69,9 +56,8 @@
           "devMode": false,
           "config": {},
           "paths": [
-            "/home/bruno.haveroth/projects/portal-talent/portal-talentrh",
-            "/home/bruno.haveroth/projects/portal-talent/portal-talentrh-api",
-            "/home/bruno.haveroth/projects/testes/templates"
+            "/home/bruno.haveroth/projects/nela/portal-talentrh",
+            "/home/bruno.haveroth/projects/nela/portal-talentrh-api"
           ]
         },
         {
@@ -82,8 +68,44 @@
           "devMode": false,
           "config": {},
           "paths": [
-            "/home/bruno.haveroth/projects/gestor-projetos/gestor-projetos",
-            "/home/bruno.haveroth/projects/gestor-projetos/gestor-projetos-api"
+            "/home/bruno.haveroth/projects/gestor/gestor-projetos",
+            "/home/bruno.haveroth/projects/gestor/gestor-projetos-api"
+          ]
+        },
+        {
+          "type": "project",
+          "name": "Pesquisa",
+          "icon": "devicons-brackets",
+          "color": "#2ba84a",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/pesquisa/pesquisa-talentrh",
+            "/home/bruno.haveroth/projects/pesquisa/pesquisa-talentrh-api"
+          ]
+        },
+        {
+          "type": "project",
+          "name": "AVD",
+          "icon": "devicons-brackets",
+          "color": "#2ba84a",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/avd/avd-talentrh",
+            "/home/bruno.haveroth/projects/avd/avd-talentrh-api"
+          ]
+        },
+        {
+          "type": "project",
+          "name": "Pesquisa GPA",
+          "icon": "devicons-brackets",
+          "color": "#248232",
+          "devMode": false,
+          "config": {},
+          "paths": [
+            "/home/bruno.haveroth/projects/pesquisa-gpa/pesquisa-gpa",
+            "/home/bruno.haveroth/projects/pesquisa-gpa/pesquisa-gpa-api"
           ]
         }
       ]

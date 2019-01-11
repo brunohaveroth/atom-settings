@@ -1,0 +1,71 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+        "spec": "/tmp/d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-1181026-15455-19ya8j7.hvud4h1tt9"
+    ]
+  ],
+  "_from": "../d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+  "_id": "ember-snippets@3.0.2",
+  "_inCache": true,
+  "_location": "/ember-snippets",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+    "spec": "/tmp/d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+  "_shasum": "9281c30e45f6c09db31a9e0bf10921907e149c9a",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-1181026-15455-1dy38d2.n4a6yzm2t9/package.tgz",
+  "_where": "/tmp/apm-install-dir-1181026-15455-19ya8j7.hvud4h1tt9",
+  "bugs": {
+    "url": "https://github.com/mattmcmanus/atom-ember-snippets/issues"
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.6.2"
+  },
+  "description": "Ember.js ES6 Snippets for Atom",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/mattmcmanus/atom-ember-snippets",
+  "keywords": [
+    "ember",
+    "ember.js",
+    "javascript",
+    "snippets",
+    "snippet"
+  ],
+  "license": "MIT",
+  "main": "./src/main",
+  "name": "ember-snippets",
+  "optionalDependencies": {},
+  "package-deps": [
+    "atom-handlebars"
+  ],
+  "readme": "# Atom Ember Snippets\n\nEmber.js ES6, Ember Data & Handlebars snippets for Atom editor\n\n![](https://d2ppvlu71ri8gs.cloudfront.net/items/400c0c1V1w2C060K253v/Screen%20Recording%202017-04-28%20at%2004.29%20PM.gif)\n\n## Installation\n\nRun the following command:\n\n```sh\napm install ember-snippets\n```\n\n## Usage\n\nRather than listing everything out here, check out the snippet files themselves:\n\n* [ember core snippets](snippets/ember.cson) for:\n  * Ember Objects\n  * Routes\n  * Components\n  * Enumerables\n  * Logger\n  * Test\n* ember rfc176 compliant imports*\n  * *Note*: These imports require `ember-cli-babel@6.6.0` or higher\n  * [application](snippets/import-application.cson)\n  * [array](snippets/import-array.cson)\n  * [base](snippets/import-base.cson)\n  * [component](snippets/import-component.cson)\n  * [controller](snippets/import-controller.cson)\n  * [debug](snippets/import-debug.cson)\n  * [ember-data](snippets/import-ember-data.cson)\n  * [engine](snippets/import-engine.cson)\n  * [map](snippets/import-map.cson)\n  * [object](snippets/import-object.cson)\n  * [polyfills](snippets/import-polyfills.cson)\n  * [routing](snippets/import-routing.cson)\n  * [rsvp](snippets/import-rsvp.cson)\n  * [runloop](snippets/import-runloop.cson)\n  * [service](snippets/import-service.cson)\n  * [string](snippets/import-string.cson)\n  * [test](snippets/import-test.cson)\n  * [utils](snippets/import-utils.cson)\n* [New file stubs](snippets/file-skeletons.cson) for:\n  * Routers, Components, Helpers & more\n* [ember-data snippets](snippets/ember-data.cson) for:\n  * Store\n  * Models\n* [Handlebars](snippets/handlebars.cson) for:\n  * Default Helpers\n  * Components\n\n## Recommended Packages\n* https://atom.io/packages/atom-handlebars\n\n## Contributing\n\nPlease send PRs! I add things as I get tired of writing them, so there are\ncertainly areas that I've missed.\n\n### Third Party Snippets\n\nIn order to keep this package as focused and \"lightweight\" as possible. It has\nbeen decided that it will focus on Ember snippets and it will not contain snippets\nfor various addons and/or third-party libraries.\n\nYou are more than welcomed to share your aggregated snippets using the list of\naddon related snippets below.\n\n### Non-Exhaustive List of Addon Related Snippets\n\n* [Ember Data Factory Guy Snippets](https://github.com/Oreoz/atom-ember-data-factory-guy-snippets)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattmcmanus/atom-ember-snippets.git"
+  },
+  "version": "3.0.2"
+}
