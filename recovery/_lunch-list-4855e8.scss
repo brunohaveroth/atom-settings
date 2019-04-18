@@ -1,0 +1,58 @@
+.lunch-list {
+  .lunch-list-header {
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px $border-color solid;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background: darken($white-color, 3%);
+    color: $form-color;
+  }
+
+  li {
+    position: relative;
+    padding: 15px 25px;
+
+    .cancel-lunch,
+    .confirm-lunch {
+      background: transparent;
+      padding: 0 0.5rem;
+      margin-bottom: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lunch-refused,
+    .cancel-lunch {
+      color: lighten($red, 15%);
+    }
+
+    .lunch-accepted,
+    .confirm-lunch {
+      color: darken($green, 15%);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: 0.7rem;
+      width: 30%;
+      right: 2rem;
+      height: 1px;
+      border-bottom: 1px $form-color solid;
+      display: none;
+    }
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .lunch-list {
+    li {
+      &:after {
+        display: block !important;
+      }
+    }
+  }
+}

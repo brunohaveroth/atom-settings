@@ -1,20 +1,70 @@
 '.source.js':
-  'set':
-    'prefix': 'set'
-    'body': "set(this, '$2', $3);"
-  'get':
-    'prefix': 'get'
-    'body': "get(this, '$2');"
-  'impO':
-    'prefix': 'impO'
-    'body': "import { $1 } from '@ember/object'"
-  'impS':
-    'prefix': 'impS'
-    'body': "import { $1 } from '@ember/service'"
-  'importSwalError':
-    'prefix': 'importSwalError'
-    'body': "import swalError from '$1/utils/swal-error';"
-'.source.hbs':
-  'submitEmber':
-    'prefix': 'submitEmber'
-    'body': '<form class="form" {{action "saveItem" model on="submit"}}></form>'
+  'DEBUG TOPPER':
+    'prefix': 'dbt'
+    'body': 'console.log("ENTROU AQUI: ${1}");'
+  'try':
+    'prefix': 'try'
+    'body': """
+      try {
+        $1
+      } catch (e) {
+        return res.badRequest(e);
+      }
+    """
+'*':
+  'UIBLOCK':
+    'prefix': 'uiblock'
+    'body': """
+      {{#ui-block as |block|}}
+        {{#block.title}}
+          <div class="h6 title">$1</div>
+        {{/block.title}}
+
+        {{#block.content}}
+          $2
+        {{/block.content}}
+      {{/ui-block}}
+    """
+
+  'UIMODALK':
+    'prefix': 'uimodal'
+    'body': """
+      {{#ui-modal open=true modalSize="modal-lg" data-backdrop="static" onCloseModal=(action 'closeModal') as |modal|}}
+        {{#modal.title}}$1{{/modal.title}}
+
+        {{#modal.body}}
+          $2
+        {{/modal.body}}
+
+        {{#modal.footer as |footer|}}
+          {{footer.cancel}}
+          {{footer.submit click=(action 'confirmVote' model)}}
+        {{/modal.footer}}
+      {{/ui-modal}}
+    """
+
+  'UIPAGE':
+    'prefix': 'uipage'
+    'body': """
+      {{#ui-page as |page|}}
+        {{#page.header as |header|}}
+          {{#header.breadcrumbs as |crumb|}}
+            {{crumb.link '$1' '$2'}}
+          {{/header.breadcrumbs}}
+
+          {{header.title '$3'}}
+        {{/page.header}}
+
+        {{#page.section}}
+          $4
+        {{/page.section}}
+      {{/ui-page}}
+    """
+
+  'UIPAGEBREADCRUMBS':
+    'prefix': 'uibreadcrumbs'
+    'body': """
+      {{#header.breadcrumbs as |crumb|}}
+        {{crumb.link '$2' '$3'}}
+      {{/header.breadcrumbs}}
+    """

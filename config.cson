@@ -26,7 +26,7 @@
     ]
   editor:
     fontFamily: "Ubuntu Mono"
-    fontSize: 17
+    fontSize: 20
     preferredLineLength: 8000
     scrollPastEnd: true
     showIndentGuide: true
@@ -36,6 +36,8 @@
     skipAutofoldWhenNotFirstLine: true
   gist:
     token: "b97c2360e7d067c15e446bf6bc8bc92dc3c6ef16"
+  "git-blame":
+    columnWidth: 396
   "nav-panel-plus":
     leftPanel: true
   navigate:

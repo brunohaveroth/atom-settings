@@ -1,0 +1,351 @@
+$dashboard-border: 1px solid rgba($black-color, 0.1);
+
+.dashboard {
+  .board-height-large {
+    height: 85vh;
+  }
+
+  .board-height-short {
+    height: calc(50% - 15px);
+  }
+
+  .board-block {
+    position: relative;
+    color: $white-color;
+
+    .ui-block-title {
+      border-bottom: $dashboard-border;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .slick-dots {
+      border-top: $dashboard-border;
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      bottom: 0;
+      padding: 6px 0;
+      background: $nela-color;
+      overflow: hidden;
+    }
+
+    .ui-block-content {
+      padding: 0;
+      height: calc(100% - 40px);
+
+      .slick-slider {
+        height: 100%;
+
+        .slick-dots {
+          li {
+            button {
+              &:before {
+                width: 12px;
+                height: 12px;
+                content: '';
+                opacity: 0.2;
+                background: $black-color;
+                border-radius: 100%;
+              }
+            }
+          }
+
+          li.slick-active {
+            button {
+              &:before {
+                opacity: 1;
+                background: $white-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .board-block-short {
+    height: 42.5vh;
+  }
+
+  .board-block--message-board {
+    background: $nela-color;
+
+    .slick-dots {
+      background: $nela-color;
+    }
+
+    .board-grid-container,
+    .slick-initialized,
+    .slick-list,
+    .slick-track {
+      height: 100% !important;
+    }
+
+    .slick-slide {
+      height: calc(100% - 40px);
+    }
+
+    .slick-slide > div {
+      height: 33.33%;
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .board-block--new-users {
+    background: $kimberly;
+
+    .slick-dots {
+      background: $kimberly;
+    }
+
+    .board-grid-container,
+    .slick-initialized,
+    .slick-list,
+    .slick-track,
+    .slick-slide,
+    .slick-slide > div {
+      height: 100%;
+    }
+
+    .dashboard-grid {
+      height: calc(100% - 40px);
+    }
+  }
+
+  .board-block--announcements {
+    background: $climate-color;
+
+    .slick-dots {
+      background: $climate-color;
+    }
+
+    .slick-initialized,
+    .slick-list,
+    .slick-track, {
+      height: 100% !important;
+    }
+
+    .slick-track > .slick-slide {
+      height: calc(100% - 40px);
+    }
+
+    .slick-track > .slick-slide > div {
+      height: 25%;
+    }
+  }
+
+  .board-block--birth,
+  .board-block--birth-employee {
+    text-align: center;
+    background: $blue-green;
+
+    .slick-dots {
+      background: $blue-green;
+    }
+
+    .board-grid-container,
+    .slick-initialized,
+    .slick-list,
+    .slick-track,
+    .slick-slide {
+      height: 100% !important;
+    }
+
+    .slick-slide > div {
+      height: calc(100% - 40px);
+    }
+
+    .author-thumb {
+      img {
+        width: 100px;
+        height: 100px;
+        border: 2px $white-color solid;
+      }
+    }
+  }
+
+  .board-block--birth-employee {
+    background: $green;
+
+    .slick-dots {
+      background: $green;
+    }
+  }
+
+  .board-block--album {
+    background: $blue-gray-light;
+
+    .slick-dots {
+      background: $blue-gray-light;
+    }
+  }
+
+  .board-grid-container {
+    display: flex !important;
+    margin-right: 0;
+    margin-left: 0;
+
+    .dashboard-grid {
+      padding: 1.5rem;
+      text-align: center;
+      border-right: $dashboard-border;
+      border-bottom: $dashboard-border;
+
+      .author-thumb {
+
+        img {
+          width: 45px;
+          height: 45px;
+          border: 1px $white-color solid;
+        }
+      }
+    }
+  }
+
+  .board-list {
+    .board-list-item {
+      width: 90% !important;
+      border-left: 5px rgba($white-color, 0.4) solid;
+      padding-left: 10px;
+      margin: 0 5%;
+      margin-bottom: 15px;
+
+      h6 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .slick-slider {
+    width: 100%;
+  }
+
+  .content-album {
+    padding: 1rem;
+    height: calc(100% - 40px);
+
+    .slick-initialized,
+    .slick-list,
+    .slick-track,
+    .slick-slide,
+    .slick-slide > div {
+      height: 100%;
+
+      img {
+        object-fit: cover;
+        border: 2px $white-color solid;
+      }
+    }
+  }
+
+  .board-block-bot {
+    height: calc(50%);
+    margin-top: 15px;
+  }
+}
+
+.board-block-hide {
+  @include animation(hideBoard $duration-middle forwards ease);
+}
+.board-block-show {
+  @include animation(showBoard $duration-middle forwards ease);
+}
+
+@include keyframes(hideBoard)  {
+  0% {
+    height: auto;
+    transform: scale(1);
+  }
+  99% {
+    height: auto;
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+    height: 0;
+  }
+}
+@include keyframes(showBoard)  {
+  0% {
+    height: 0;
+    transform: scale(0);
+  }
+  1% {
+    height: auto;
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    height: auto;
+  }
+}
+
+@media (max-height: 800px) {
+  .dashboard {
+    .board-list {
+
+      .board-list-item {
+        margin: 0 5%;
+        margin-bottom: 0;
+        line-height: 1;
+      }
+    }
+
+    .board-block--new-users {
+      h6 {
+        font-size: 0.8rem;
+        margin: 5px 0 !important;
+      }
+      h5 {
+        margin: 8px 0 !important;
+      }
+    }
+
+    .board-block--birth,
+    .board-block--birth-employee {
+      .author-thumb {
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      h5 {
+        font-size: 1rem;
+      }
+    }
+
+    .board-block--message-board {
+      .author-thumb {
+        img {
+          width: 5vh !important;
+          height: 5vh !important;
+        }
+      }
+      .dashboard-grid {
+        padding: 1rem;
+
+        h6 {
+          font-size: 0.8rem;
+          margin: 5px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-height: 720px) {
+  .dashboard {
+    .board-list {
+
+      .board-list-item {
+
+        h6 {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
