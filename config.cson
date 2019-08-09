@@ -26,7 +26,7 @@
     ]
   editor:
     fontFamily: "Ubuntu Mono"
-    fontSize: 20
+    fontSize: 18
     preferredLineLength: 8000
     scrollPastEnd: true
     showIndentGuide: true
@@ -37,7 +37,7 @@
   gist:
     token: "b97c2360e7d067c15e446bf6bc8bc92dc3c6ef16"
   "git-blame":
-    columnWidth: 396
+    columnWidth: 300
   "nav-panel-plus":
     leftPanel: true
   navigate:

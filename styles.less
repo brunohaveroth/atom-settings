@@ -17,22 +17,54 @@
 
 // style the background color of the tree view
 .tree-view {
-  background-color: #171819;
+  background: url(/home/bruno.haveroth/.atom/img/bg3.png);
+  background-size: 100px;
+
+  span.name {
+    position: relative;
+    font-size: 1.2rem;
+  }
 }
 
 .tree-view .selected:before {
   background-color: #333;
 }
 
+atom-text-editor .gutter {
+  background: url(/home/bruno.haveroth/.atom/img/bg3.png);
+  background-size: 100px;
+}
+
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
   // color: white;
-  background: linear-gradient(123deg, #1d1d1d 1%, #1b1b1b 51%, #1b1b1b 75%);
+  // background: #171717;
+  background: url(/home/bruno.haveroth/.atom/img/bg3.png);
+  background-size: 100px;
 }
 
 // style UI elements inside atom-text-editor
 atom-text-editor .cursor {
   // border-color: red;
+}
+
+.syntax--string {
+  color: #93a957;
+  font-style: italic;
+}
+
+.syntax--entity.syntax--name.syntax--tag {
+  color: #cc6666;
+}
+
+.syntax--variable.syntax--parameter.syntax--handlebars {
+  color: #81a2be;
+}
+
+.syntax--entity.syntax--other.syntax--attribute-value.syntax--handlebars {
+  .syntax--variable.syntax--parameter.syntax--handlebars {
+    color: #bbb;
+  }
 }
 
 .project-root::before{
@@ -45,15 +77,4 @@ atom-text-editor .cursor {
 
 atom-text-editor .gutter .line-number.git-line-added {
   border-left: 2px solid #68bd7f !important;
-}
-
-// Handlebars
-.syntax--variable.syntax--parameter.syntax--handlebars {
-  color: #81a2be;
-}
-
-.syntax--entity.syntax--other.syntax--attribute-value.syntax--handlebars {
-  .syntax--variable.syntax--parameter.syntax--handlebars {
-    color: #bbb;
-  }
 }
