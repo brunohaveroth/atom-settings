@@ -1,0 +1,58 @@
+{{#ui-sidebar linkTo="home" as |menu|}}
+  {{menu.item text="Indicadores" icon="fa-home"}}
+
+  {{#menu.item text="Configurações" icon="fa-cog" showIf=user.admin as |menuItem|}}
+    {{#menuItem.submenu as |submenu|}}
+      {{submenu.item text="Social" linkTo="settings.nela"}}
+      {{submenu.item text="Emails" linkTo="settings.emails"}}
+      {{submenu.item text="Integração" linkTo="settings.integration"}}
+    {{/menuItem.submenu}}
+  {{/menu.item}}
+
+  {{#menu.item
+    text="Cadastros"
+    icon="fa-pen-square"
+    showIf=(can 'allowRegistersMenu application' userConfigs=model)
+    as |menuItem|
+  }}
+    {{#menuItem.submenu as |submenu|}}
+      {{submenu.item text="Geral" linkTo="configuration.general.company" showIf=(can 'allowGeneral application' userConfigs=model)}}
+      {{submenu.item text="Nela" linkTo="configuration.nela.benefit" showIf=(can 'allowGeneral application' userConfigs=model)}}
+      {{submenu.item text="AVD" linkTo="configuration.avd.evaluation" showIf=(can 'allowAvd application' userConfigs=model)}}
+      {{submenu.item text="Treinamento" linkTo="configuration.training.training-generic" showIf=(can 'allowTraining application' userConfigs=model)}}
+    {{/menuItem.submenu}}
+  {{/menu.item}}
+
+  {{menu.item
+    text="Dados Cadastrais"
+    linkTo="user.edit"
+    icon="fa-user-circle"
+  }}
+
+  {{menu.item
+    text="Super Usuário"
+    linkTo="super-user"
+    icon="fa-user-secret"
+    showIf=(can 'manageVersions application' userConfigs=model)
+  }}
+
+  {{menu.item
+    text="Gestor de Projetos"
+    linkTo="project-manager.notifications"
+    icon="fa-tasks"
+  }}
+
+  {{menu.item
+    text="Relatórios"
+    linkTo="reports.access-log"
+    icon="fa-pen-square"
+    showIf=(can 'allowRegistersMenu application' userConfigs=model)
+  }}
+
+  {{menu.item
+    text="Gerenciar Pedidos de Almoço"
+    linkTo="manage-lunch-list"
+    icon="fa-utensils"
+    showIf=(can 'allowManageList application' userConfigs=model)
+  }}
+{{/ui-sidebar}}

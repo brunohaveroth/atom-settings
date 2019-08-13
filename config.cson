@@ -26,7 +26,7 @@
     ]
   editor:
     fontFamily: "Ubuntu Mono"
-    fontSize: 18
+    fontSize: 20
     preferredLineLength: 8000
     scrollPastEnd: true
     showIndentGuide: true
@@ -34,6 +34,8 @@
     userId: "3731c3a3-ae01-47e5-8daa-9903b144bdf9"
   "fold-functions":
     skipAutofoldWhenNotFirstLine: true
+  fonts:
+    fontFamily: "Ubuntu Mono"
   gist:
     token: "b97c2360e7d067c15e446bf6bc8bc92dc3c6ef16"
   "git-blame":
@@ -45,6 +47,15 @@
     f1: "http://devdocs.io/#q=&searchterm"
     f10: "https://duckduckgo.com/?q=&searchterm"
     f6: "http://www.bing.com/search?q=&searchterm"
+  "nyan-indent":
+    customColors:
+      "0": "#dbdbdb"
+      "1": "#7e7a7a"
+      "2": "#dbdbdb"
+      "3": "#7e7a7a"
+      "4": "#ee6262"
+    opacity: 6
+    useCustomColors: true
   "platformio-ide-terminal":
     style:
       defaultPanelHeight: "600px"

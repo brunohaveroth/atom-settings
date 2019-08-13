@@ -1,0 +1,57 @@
+{
+  "_from": "https://www.atom.io/api/packages/nyan-indent/versions/0.9.8/tarball",
+  "_id": "nyan-indent@0.9.8",
+  "_inBundle": false,
+  "_integrity": "sha512-QdZ7ichMwMQu9+PR1T9oDlGXcRrhzHckY0WE/cdsmemg3q5X69qRM0KOn78CgLikPs9R/40p00JeXZu3lN8nVQ==",
+  "_location": "/nyan-indent",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/nyan-indent/versions/0.9.8/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/nyan-indent/versions/0.9.8/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/nyan-indent/versions/0.9.8/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/nyan-indent/versions/0.9.8/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/nyan-indent/versions/0.9.8/tarball",
+  "_shasum": "616e33d0a13bb4852703b02bbebd47b2715dd092",
+  "_spec": "https://www.atom.io/api/packages/nyan-indent/versions/0.9.8/tarball",
+  "_where": "/tmp/apm-install-dir-119713-20532-6dbe5p.fx4h",
+  "bugs": {
+    "url": "https://github.com/victorhqc/nyan-indent/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "deprecated": false,
+  "description": "Colorful indentation",
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/victorhqc/nyan-indent#readme",
+  "keywords": [
+    "atom",
+    "indentation",
+    "colors",
+    "rainbow"
+  ],
+  "license": "MIT",
+  "main": "./lib/nyan-indent",
+  "name": "nyan-indent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorhqc/nyan-indent.git"
+  },
+  "version": "0.9.8"
+}

@@ -17,8 +17,7 @@
 
 // style the background color of the tree view
 .tree-view {
-  background: url(/home/bruno.haveroth/.atom/img/bg3.png);
-  background-size: 100px;
+  background: #121213;
 
   span.name {
     position: relative;
@@ -32,15 +31,13 @@
 
 atom-text-editor .gutter {
   background: url(/home/bruno.haveroth/.atom/img/bg3.png);
-  background-size: 100px;
+  background: #101010;
 }
 
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
-  // color: white;
-  // background: #171717;
   background: url(/home/bruno.haveroth/.atom/img/bg3.png);
-  background-size: 100px;
+  background: #101010;
 }
 
 // style UI elements inside atom-text-editor
@@ -66,6 +63,27 @@ atom-text-editor .cursor {
     color: #bbb;
   }
 }
+
+.syntax--constant {
+  color: #b294bb;
+}
+
+atom-text-editor .indent-guide {
+  color: rgba(82, 82, 82, 0.66);
+}
+
+
+
+
+// Sidebar font colors
+.list-group li:not(.list-nested-item).status-modified, .list-tree li:not(.list-nested-item).status-modified, .list-group li.list-nested-item.status-modified > .list-item, .list-tree li.list-nested-item.status-modified > .list-item {
+  color: #c77b2c;
+}
+
+.list-group li:not(.list-nested-item).status-added, .list-tree li:not(.list-nested-item).status-added, .list-group li.list-nested-item.status-added > .list-item, .list-tree li.list-nested-item.status-added > .list-item {
+  color: #1a944f;
+}
+// Sidebar font colors
 
 .project-root::before{
   background: #333 !important;
