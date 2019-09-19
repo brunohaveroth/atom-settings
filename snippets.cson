@@ -12,18 +12,16 @@
       }
     """
 '*':
-  'UIBLOCK':
-    'prefix': 'uiblock'
+  'UICARD':
+    'prefix': 'uicard'
     'body': """
-      {{#ui-block as |block|}}
-        {{#block.title}}
-          <div class="h6 title">$1</div>
-        {{/block.title}}
+      {{#ui-card as |card|}}
+        {{#card.header}}$1{{/card.header}}
 
-        {{#block.content}}
+        {{#card.body}}
           $2
-        {{/block.content}}
-      {{/ui-block}}
+        {{/card.body}}
+      {{/ui-card}}
     """
 
   'UIMODALK':
@@ -67,4 +65,14 @@
       {{#header.breadcrumbs as |crumb|}}
         {{crumb.link '$2' '$3'}}
       {{/header.breadcrumbs}}
+    """
+
+  'headercard':
+    'prefix': 'headercard'
+    'body': """
+        <div class="card-header d-flex align-items-center">
+          <div class="title mr-auto">$2</div>
+
+          $3
+        </div>
     """

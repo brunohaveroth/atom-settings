@@ -1,58 +1,175 @@
-{{#ui-sidebar linkTo="home" as |menu|}}
-  {{menu.item text="Indicadores" icon="fa-home"}}
 
-  {{#menu.item text="Configurações" icon="fa-cog" showIf=user.admin as |menuItem|}}
-    {{#menuItem.submenu as |submenu|}}
-      {{submenu.item text="Social" linkTo="settings.nela"}}
-      {{submenu.item text="Emails" linkTo="settings.emails"}}
-      {{submenu.item text="Integração" linkTo="settings.integration"}}
-    {{/menuItem.submenu}}
-  {{/menu.item}}
+<div class="news-feed-layer d-none"></div>
 
-  {{#menu.item
-    text="Cadastros"
-    icon="fa-pen-square"
-    showIf=(can 'allowRegistersMenu application' userConfigs=model)
-    as |menuItem|
-  }}
-    {{#menuItem.submenu as |submenu|}}
-      {{submenu.item text="Geral" linkTo="configuration.general.company" showIf=(can 'allowGeneral application' userConfigs=model)}}
-      {{submenu.item text="Nela" linkTo="configuration.nela.benefit" showIf=(can 'allowGeneral application' userConfigs=model)}}
-      {{submenu.item text="AVD" linkTo="configuration.avd.evaluation" showIf=(can 'allowAvd application' userConfigs=model)}}
-      {{submenu.item text="Treinamento" linkTo="configuration.training.training-generic" showIf=(can 'allowTraining application' userConfigs=model)}}
-    {{/menuItem.submenu}}
-  {{/menu.item}}
+<div class="container ui-container">
+  <div class="row">
+    <main class="col-lg-6 order-lg-2">
+      {{mobile-banner}}
 
-  {{menu.item
-    text="Dados Cadastrais"
-    linkTo="user.edit"
-    icon="fa-user-circle"
-  }}
+      {{viasoft-connect-widget}}
 
-  {{menu.item
-    text="Super Usuário"
-    linkTo="super-user"
-    icon="fa-user-secret"
-    showIf=(can 'manageVersions application' userConfigs=model)
-  }}
+      {{toolbar-lunch model=model}}
 
-  {{menu.item
-    text="Gestor de Projetos"
-    linkTo="project-manager.notifications"
-    icon="fa-tasks"
-  }}
+      {{home-quiz}}
 
-  {{menu.item
-    text="Relatórios"
-    linkTo="reports.access-log"
-    icon="fa-pen-square"
-    showIf=(can 'allowRegistersMenu application' userConfigs=model)
-  }}
+      {{#if (and model.configuration.showBirthdayMessage (not isBirthdayMessageClosed))}}
+        {{user-birthday user=model.user}}
+      {{/if}}
 
-  {{menu.item
-    text="Gerenciar Pedidos de Almoço"
-    linkTo="manage-lunch-list"
-    icon="fa-utensils"
-    showIf=(can 'allowManageList application' userConfigs=model)
-  }}
-{{/ui-sidebar}}
+      {{user-feeling show=model.configuration.permitUserFeeling}}
+
+      {{#news-feed-form model=model}}
+        <div class="tab-content">
+          {{#if model.user.accessProfile.postMessage}}
+            <div class="tab-pane active" id="post-message" role="tabpanel" aria-expanded="true">
+              {{post-new type='message' afterCreate=(action 'refreshRoute') showBasicEditor=true user=model.user showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
+            </div>
+          {{/if}}
+
+          <div class="tab-pane" id="post-announcement" role="tabpanel" aria-expanded="true">
+            {{post-new afterCreate=(action 'refreshRoute') type='announcement' showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
+          </div>
+
+          <div class="tab-pane" id="post-event" role="tabpanel" aria-expanded="true">
+            {{post-new afterCreate=(action 'refreshRoute') type='event' showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
+          </div>
+
+          <div class="tab-pane" id="post-news" role="tabpanel" aria-expanded="true">
+            {{post-new afterCreate=(action 'refreshRoute') type='news' showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
+          </div>
+
+          <div class="tab-pane" id="post-ad" role="tabpanel" aria-expanded="true">
+            {{post-new afterCreate=(action 'refreshRoute') type='ad' showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
+          </div>
+
+          <div class="tab-pane" id="post-survey" role="tabpanel" aria-expanded="true">
+            {{post-new-survey afterCreate=(action 'refreshRoute')}}
+          </div>
+        </div>
+      {{/news-feed-form}}
+
+      <ul class="text-center">
+        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'all'}}>Todas</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'last'}}>Últimas</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPostFollowing'}}>Seguindo</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPostFavorite'}}>Favoritos</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'message'}}>Mensagens</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'announcement'}}>Comunicados</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'event'}}>Eventos</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'news'}}>Notícias</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'ad'}}>Classificados</a></li>
+        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'survey'}}>Enquetes</a></li>
+        <li class="cat-list__item {{unless session.user.admin 'd-none'}}"><a href="#" {{action 'loadPost' 'archived'}}>Arquivados</a></li>
+        <li class="cat-list__item">
+          <a href="#" {{action 'openTagFilterModal'}}>
+            {{if postTagFilter postTagFilter.title 'Outros'}} <i class="fa fa-caret-down" aria-hidden></i>
+          </a>
+        </li>
+      </ul>
+
+      {{#if loading}}
+        {{preloader-animation type=3}}
+      {{/if}}
+
+      <div id="newsfeed-items-grid">
+
+        {{#if model.posts}}
+          {{#infinite-post-scroll posts=model.posts type=type following=following favorite=favorite user=model.user configuration=model.configuration}}
+            <ul class="collapse-lg">
+              {{#each model.posts as |post| }}
+                {{post-item
+                  onArchivePost=(route-action 'refresh')
+                  post=post
+                  user=model.user
+                  timeline=true
+                  configuration=model.configuration
+                }}
+              {{/each}}
+            </ul>
+          {{/infinite-post-scroll}}
+          {{#unless (gt model.posts.meta.total model.posts.length) }}
+            <div class="text-center">
+              <a href="#">Fim das postagens <br> Voltar para o topo da página</a>
+            </div>
+          {{/unless}}
+        {{else if (not loading)}}
+          <br>
+          <div class="alert alert-callout alert-warning" role="alert">
+            <strong> Postagens </strong><br> Não há postagens, seja o primeiro a divulgar suas conquistas para a empresa!
+          </div>
+        {{/if}}
+      </div>
+    </main>
+
+
+    <aside class="col-lg-3 col-md-6 d-lg-block order-lg-1 d-none">
+
+      {{widgets/user-appointments user=model.user}}
+
+      {{#if model.configuration.hasProjectManagerModule}}
+        {{widgets/open-tasks}}
+      {{/if}}
+
+
+
+      {{#if model.configuration.hasAVDModule}}
+        {{widgets/open-evaluation}}
+        {{widgets/open-feedback}}
+        {{widgets/open-pdi}}
+        {{widgets/open-pde}}
+      {{/if}}
+
+      {{#if model.configuration.hasTrainingModule}}
+        {{widgets/open-trainings}}
+      {{/if}}
+
+      {{#if model.configuration.showUserLinksHome}}
+        {{widgets/user-links}}
+      {{/if}}
+    </aside>
+
+    <aside class="col-lg-3 col-md-6 d-lg-block order-lg-3 col-md-6 d-none">
+
+      {{#if model.configuration.permitAnnouncement}}
+        <div class="col-lg-12 no-padding">
+          {{widgets/latest-announcements-home}}
+        </div>
+      {{/if}}
+
+
+      <div class="col-lg-12 no-padding">
+        {{widgets/birthday-employees configuration=model.configuration}}
+      </div>
+
+      <div class="col-lg-12 no-padding">
+        {{widgets/admission-anniversaries configuration=model.configuration}}
+      </div>
+
+      {{#if model.configuration.permitEvent}}
+        <div class="col-lg-12 no-padding">
+          {{widgets/next-events}}
+        </div>
+      {{/if}}
+
+      {{#if model.configuration.permitMural}}
+        {{!-- MURAL DE RECADOS --}}
+        {{widgets/user-messages}}
+      {{/if}}
+
+      <div class="col-lg-12 no-padding">
+        <div class="col-lg-12 no-padding">
+          {{widgets/new-users}}
+        </div>
+      </div>
+
+      {{#if model.configuration.permitAd}}
+        {{widgets/open-ads}}
+      {{/if}}
+    </aside>
+  </div>
+  {{outlet}}
+</div>
+
+{{post-tag-select
+  onTagChange=(action 'onTagChange')
+  openModal=openTagFilterModal}}
