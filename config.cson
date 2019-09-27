@@ -16,6 +16,9 @@
     autoHideMenuBar: true
     closeEmptyWindows: false
     destroyEmptyPanes: false
+    disabledPackages: [
+      "Handlebars"
+    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: []
     projectHome: "~/Projects"
@@ -75,3 +78,7 @@
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+".basic.html.text":
+  editor:
+    autoIndent: false
+    autoIndentOnPaste: true

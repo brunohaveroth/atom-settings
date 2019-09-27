@@ -78,14 +78,33 @@ atom-text-editor .indent-guide {
   color: #c5c8c6;
 }
 
-.syntax--meta.syntax--tag.syntax--other.syntax--html {
-  color: #b294bb !important;
+.syntax--meta.syntax--tag.syntax--other.syntax--html,
+.syntax--Input,
+.syntax--Label,
+.syntax--Nav
+{
+  color: #b294bb;
 
   .syntax--entity.syntax--name.syntax--tag {
-    color: #b294bb !important;
+    color: #b294bb;
   }
 }
 
+.syntax--meta.syntax--attribute-without-value.syntax--html {
+  .syntax--entity.syntax--other.syntax--attribute-name.syntax--html {
+    color: #c5c8c6;
+  }
+}
+
+.syntax--meta.syntax--tag.syntax--template.syntax--handlebars
+{
+  color: #81a2be;
+}
+
+.syntax--entity.syntax--name.syntax--function.syntax--handlebars,
+.syntax--entity.syntax--name.syntax--tag.syntax--handlebars {
+  color: #b294bb;
+}
 
 
 // Sidebar font colors
