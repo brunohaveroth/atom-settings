@@ -1,1 +1,12 @@
 Fontconfig error: "/home/bruno.haveroth/.config/fontconfig/fonts.conf", line 23: no element found
+Gtk-Message: 15:45:21.380: GtkDialog mapped without a transient parent. This is discouraged.
+This tool has been deprecated, use 'gio trash' instead.
+See 'gio help trash' for more info.
+
+Gtk-Message: 17:11:08.665: GtkDialog mapped without a transient parent. This is discouraged.
+This tool has been deprecated, use 'gio trash' instead.
+See 'gio help trash' for more info.
+
+Gtk-Message: 14:15:46.748: GtkDialog mapped without a transient parent. This is discouraged.
+Gtk-Message: 16:13:59.581: GtkDialog mapped without a transient parent. This is discouraged.
+Gtk-Message: 16:39:54.327: GtkDialog mapped without a transient parent. This is discouraged.

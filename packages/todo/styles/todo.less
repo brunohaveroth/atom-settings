@@ -1,0 +1,96 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+todo {
+  width: 400px;
+  overflow-y: scroll;
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+
+    h1 {
+      flex: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .controls {
+      padding: 0;
+      margin: 0;
+    }
+
+    margin-bottom: 0.5rem;
+  }
+
+  .search {
+      background-color: @input-background-color;
+      border-color: @input-border-color;
+      border: 0;
+      width: 100%;
+      padding: 0.5em;
+  }
+
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: @text-color-subtle;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: @text-color-subtle;
+      opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: @text-color-subtle;
+      opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: @text-color-subtle;
+  }
+
+  .status {
+    text-align: right;
+    color: @text-color-info;
+  }
+
+  .loading {
+    margin: auto;
+  }
+
+  .list {
+    .list-item {
+      margin-bottom: 10px;
+
+      .filepath {
+        color: @text-color-subtle;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .todo-text {
+        color: @text-color;
+        margin: 5px 0 5px 5px;
+
+        &:hover {
+          cursor: pointer;
+          color: @text-color-highlight;
+        }
+      }
+    }
+  }
+
+  .icon-file-text, .icon-file-directory {
+    color: @text-color-subtle;
+    // background-color: @background-color-selected;
+  }
+
+  .list-item {
+    white-space: normal;
+
+    &:hover {
+      // background-color: @background-color-selected;
+      // color: @text-color-highlight;
+    }
+  }
+}

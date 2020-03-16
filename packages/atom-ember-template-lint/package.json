@@ -1,0 +1,58 @@
+{
+  "_from": "https://www.atom.io/api/packages/atom-ember-template-lint/versions/4.1.0/tarball",
+  "_id": "atom-ember-template-lint@4.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-5cptJao/IREQInVgz4hF7VTAuy+x7sujaYpgtp4j1sDHtYLFlDj1/ib0uK0AnuNzaeZBtW146GY1hn7ErAr2uw==",
+  "_location": "/atom-ember-template-lint",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atom-ember-template-lint/versions/4.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-ember-template-lint/versions/4.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-ember-template-lint/versions/4.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-ember-template-lint/versions/4.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/atom-ember-template-lint/versions/4.1.0/tarball",
+  "_shasum": "2011dc3bf9f80d3d6903e30cc53de8d70373516f",
+  "_spec": "https://www.atom.io/api/packages/atom-ember-template-lint/versions/4.1.0/tarball",
+  "_where": "/tmp/apm-install-dir-120023-21549-1ggpwkd.nohc",
+  "bugs": {
+    "url": "https://github.com/grrakesh4769/atom-ember-template-lint/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "atom-linter": "^10.0.0",
+    "atom-package-deps": "^5.1.0",
+    "ember-template-lint": "^1.12.1",
+    "loophole": "^1.1.0"
+  },
+  "deprecated": false,
+  "description": "Ember template linter",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/grrakesh4769/atom-ember-template-lint#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "./lib/atom-ember-template-lint",
+  "name": "atom-ember-template-lint",
+  "package-deps": [
+    "linter:2.2.0"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grrakesh4769/atom-ember-template-lint.git"
+  },
+  "version": "4.1.0"
+}

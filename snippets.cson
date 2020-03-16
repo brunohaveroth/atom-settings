@@ -11,52 +11,58 @@
         return res.badRequest(e);
       }
     """
+  'validation':
+    'prefix': 'validation'
+    'body': """
+      if(model.validations.isInvalid) {
+        return this.swal.validation(model.validations);
+      }
+    """
 '*':
   'UICARD':
     'prefix': 'uicard'
     'body': """
-      {{#ui-card as |card|}}
-        {{#card.header}}$1{{/card.header}}
+      <UiCard as |Card|>
+        <Card.header>$1</Card.header>
 
-        {{#card.body}}
+        <Card.body>
           $2
-        {{/card.body}}
-      {{/ui-card}}
+        </Card.body>
+      </UiCard>
     """
 
   'UIMODALK':
     'prefix': 'uimodal'
     'body': """
-      {{#ui-modal open=true modalSize="modal-lg" data-backdrop="static" onCloseModal=(action 'closeModal') as |modal|}}
-        {{#modal.title}}$1{{/modal.title}}
+      <UiModal @open={{true}} @modalSize="modal-lg" @onCloseModal={{action "closeModal"}} data-backdrop="static" as |Modal|>
+        <Modal.title>$1</Modal.title>
 
-        {{#modal.body}}
-          $2
-        {{/modal.body}}
+        <Modal.body>
 
-        {{#modal.footer as |footer|}}
-          {{footer.cancel}}
-          {{footer.submit click=(action 'confirmVote' model)}}
-        {{/modal.footer}}
-      {{/ui-modal}}
+        </Modal.body>
+
+        <Modal.footer as |Footer|>
+          <Footer.cancel/>
+          <Footer.submit onclick={{action "confirmVote" model}}/>
+        </Modal.footer>
+      </UiModal>
     """
 
   'UIPAGE':
     'prefix': 'uipage'
     'body': """
-      {{#ui-page as |page|}}
-        {{#page.header as |header|}}
-          {{#header.breadcrumbs as |crumb|}}
-            {{crumb.link '$1' '$2'}}
-          {{/header.breadcrumbs}}
+      <UiPage as |Page|>
+        <Page.header as |Header|>
+          <Header.title>$1/Header.title>
 
-          {{header.title '$3'}}
-        {{/page.header}}
+          <Header.breadcrumbs as |Crumb|>
+            <Crumb.link @text="Início" @link="home"/>
+          </Header.breadcrumbs>
+        </Page.header>
 
-        {{#page.section}}
-          $4
-        {{/page.section}}
-      {{/ui-page}}
+        <Page.section>
+        </Page.section>
+      </UiPage>
     """
 
   'UIPAGEBREADCRUMBS':
@@ -75,4 +81,52 @@
 
           $3
         </div>
+    """
+
+  'nela-date':
+    'prefix': 'nela-date'
+    'body': """
+        <NelaDatepicker
+          @selected={{$1}}
+          @onSelect={{action (mut $1)
+          value="date"}}
+        />
+    """
+
+  'nela-multiselect':
+    'prefix': 'nela-multiselect'
+    'body': """
+      <NelaSelectMultiple
+        @selected={{usersSelected}}
+        @modelName="user"
+        @endPoint="/users/ajax"
+      as |record|>
+        {{record.firstName}} {{record.lastName}}
+      </NelaSelectMultiple>
+    """
+
+  'nela-select':
+    'prefix': 'nela-select'
+    'body': """
+      <NelaSelect
+        @selected={{userSelected}}
+        @modelName="user"
+        @endPoint="/users/ajax"
+      as |record|>
+        {{record.firstName}} {{record.lastName}}
+      </NelaSelect>
+    """
+
+  'ui-radio':
+    'prefix': 'ui-radio'
+    'body': """
+      <UiRadio @option="blue" @selected={{color}} @onChange={{action (mut color)}}>
+        Azul
+      </UiRadio>
+    """
+
+  'ui-checkbox':
+    'prefix': 'ui-checkbox'
+    'body': """
+      <UiCheckbox @checked={{required}}>Obrigatório</UiCheckbox>
     """

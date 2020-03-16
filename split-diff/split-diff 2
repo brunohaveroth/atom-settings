@@ -1,175 +1,71 @@
+/* globals io */
+import Service from '@ember/service';
+import { inject as service } from '@ember/service';
+import { debug } from '@ember/debug';
+import config from 'nela-talk/config/environment';
 
-<div class="news-feed-layer d-none"></div>
+const {
+  APP: {
+    version
+  }
+} = config;
 
-<div class="container ui-container">
-  <div class="row">
-    <main class="col-lg-6 order-lg-2">
-      {{mobile-banner}}
+export default Service.extend({
+  chatService: service(),
+  notification: service(),
+  session: service(),
+  store: service(),
 
-      {{viasoft-connect-widget}}
+  authenticateSocket() {
+    io.socket.request({
+      method: 'post',
+      url: '/socketlogin',
+      data: {
+        origin: 'nela-talk-desktop',
+        version: version.split('+')[0]
+      },
+      headers: this.session.authorizationBearer
+    }, function(response) {
+      debug(`Socket login: ${response}`);
+    });
+  },
 
-      {{toolbar-lunch model=model}}
+  initSocketListeners() {
+    io.socket.on('needsAuthentication', () => {
+      debug(`*** Pediu autenticação ***`);
+      this.authenticateSocket();
+    });
 
-      {{home-quiz}}
+    io.socket.on('chatmessage', (body) => {
+      let currentChat = this.get('chatService.currentChat.open') || {};
+      let chatMessage = body.chatMessage;
 
-      {{#if (and model.configuration.showBirthdayMessage (not isBirthdayMessageClosed))}}
-        {{user-birthday user=model.user}}
-      {{/if}}
+      debug(`No momento falando com: ${currentChat.with} ${currentChat.name}`);
+      debug(`Recebendo mensagem de chat do usuario ${chatMessage.from}`);
 
-      {{user-feeling show=model.configuration.permitUserFeeling}}
+      if (chatMessage.userGroup) {
+        debug(`Grupo: ${chatMessage.userGroup}`);
+      }
 
-      {{#news-feed-form model=model}}
-        <div class="tab-content">
-          {{#if model.user.accessProfile.postMessage}}
-            <div class="tab-pane active" id="post-message" role="tabpanel" aria-expanded="true">
-              {{post-new type='message' afterCreate=(action 'refreshRoute') showBasicEditor=true user=model.user showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
-            </div>
-          {{/if}}
+      this.chatService.addIncomingMessage(chatMessage);
 
-          <div class="tab-pane" id="post-announcement" role="tabpanel" aria-expanded="true">
-            {{post-new afterCreate=(action 'refreshRoute') type='announcement' showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
-          </div>
+      if (currentChat.type === 'direct' && chatMessage.type === 'direct' && chatMessage.from == currentChat.with) {
+        debug(`Mensagem DIRECT Message: ${chatMessage}`);
+        this.chatService.setAsRead(chatMessage.from);
+      }
 
-          <div class="tab-pane" id="post-event" role="tabpanel" aria-expanded="true">
-            {{post-new afterCreate=(action 'refreshRoute') type='event' showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
-          </div>
+      if (currentChat.type === 'group' && (chatMessage.type === 'group' || chatMessage.type === 'system') &&
+        chatMessage.userGroup == currentChat.with) {
+        debug(`GROUP Message: ${body.chatMessage}`);
+        this.chatService.setAsRead(currentChat.with, 'group');
+      }
+    });
 
-          <div class="tab-pane" id="post-news" role="tabpanel" aria-expanded="true">
-            {{post-new afterCreate=(action 'refreshRoute') type='news' showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
-          </div>
+    io.socket.on('openChat', (body) => {
+      debug('Received OpenChat');
+      debug(body);
 
-          <div class="tab-pane" id="post-ad" role="tabpanel" aria-expanded="true">
-            {{post-new afterCreate=(action 'refreshRoute') type='ad' showTaskAttachment=model.configuration.featureFlags.taskAttachments}}
-          </div>
-
-          <div class="tab-pane" id="post-survey" role="tabpanel" aria-expanded="true">
-            {{post-new-survey afterCreate=(action 'refreshRoute')}}
-          </div>
-        </div>
-      {{/news-feed-form}}
-
-      <ul class="text-center">
-        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'all'}}>Todas</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'last'}}>Últimas</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPostFollowing'}}>Seguindo</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPostFavorite'}}>Favoritos</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'message'}}>Mensagens</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'announcement'}}>Comunicados</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'event'}}>Eventos</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'news'}}>Notícias</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'ad'}}>Classificados</a></li>
-        <li class="cat-list__item"><a href="#" {{action 'loadPost' 'survey'}}>Enquetes</a></li>
-        <li class="cat-list__item {{unless session.user.admin 'd-none'}}"><a href="#" {{action 'loadPost' 'archived'}}>Arquivados</a></li>
-        <li class="cat-list__item">
-          <a href="#" {{action 'openTagFilterModal'}}>
-            {{if postTagFilter postTagFilter.title 'Outros'}} <i class="fa fa-caret-down" aria-hidden></i>
-          </a>
-        </li>
-      </ul>
-
-      {{#if loading}}
-        {{preloader-animation type=3}}
-      {{/if}}
-
-      <div id="newsfeed-items-grid">
-
-        {{#if model.posts}}
-          {{#infinite-post-scroll posts=model.posts type=type following=following favorite=favorite user=model.user configuration=model.configuration}}
-            <ul class="collapse-lg">
-              {{#each model.posts as |post| }}
-                {{post-item
-                  onArchivePost=(route-action 'refresh')
-                  post=post
-                  user=model.user
-                  timeline=true
-                  configuration=model.configuration
-                }}
-              {{/each}}
-            </ul>
-          {{/infinite-post-scroll}}
-          {{#unless (gt model.posts.meta.total model.posts.length) }}
-            <div class="text-center">
-              <a href="#">Fim das postagens <br> Voltar para o topo da página</a>
-            </div>
-          {{/unless}}
-        {{else if (not loading)}}
-          <br>
-          <div class="alert alert-callout alert-warning" role="alert">
-            <strong> Postagens </strong><br> Não há postagens, seja o primeiro a divulgar suas conquistas para a empresa!
-          </div>
-        {{/if}}
-      </div>
-    </main>
-
-
-    <aside class="col-lg-3 col-md-6 d-lg-block order-lg-1 d-none">
-
-      {{widgets/user-appointments user=model.user}}
-
-      {{#if model.configuration.hasProjectManagerModule}}
-        {{widgets/open-tasks}}
-      {{/if}}
-
-
-
-      {{#if model.configuration.hasAVDModule}}
-        {{widgets/open-evaluation}}
-        {{widgets/open-feedback}}
-        {{widgets/open-pdi}}
-        {{widgets/open-pde}}
-      {{/if}}
-
-      {{#if model.configuration.hasTrainingModule}}
-        {{widgets/open-trainings}}
-      {{/if}}
-
-      {{#if model.configuration.showUserLinksHome}}
-        {{widgets/user-links}}
-      {{/if}}
-    </aside>
-
-    <aside class="col-lg-3 col-md-6 d-lg-block order-lg-3 col-md-6 d-none">
-
-      {{#if model.configuration.permitAnnouncement}}
-        <div class="col-lg-12 no-padding">
-          {{widgets/latest-announcements-home}}
-        </div>
-      {{/if}}
-
-
-      <div class="col-lg-12 no-padding">
-        {{widgets/birthday-employees configuration=model.configuration}}
-      </div>
-
-      <div class="col-lg-12 no-padding">
-        {{widgets/admission-anniversaries configuration=model.configuration}}
-      </div>
-
-      {{#if model.configuration.permitEvent}}
-        <div class="col-lg-12 no-padding">
-          {{widgets/next-events}}
-        </div>
-      {{/if}}
-
-      {{#if model.configuration.permitMural}}
-        {{!-- MURAL DE RECADOS --}}
-        {{widgets/user-messages}}
-      {{/if}}
-
-      <div class="col-lg-12 no-padding">
-        <div class="col-lg-12 no-padding">
-          {{widgets/new-users}}
-        </div>
-      </div>
-
-      {{#if model.configuration.permitAd}}
-        {{widgets/open-ads}}
-      {{/if}}
-    </aside>
-  </div>
-  {{outlet}}
-</div>
-
-{{post-tag-select
-  onTagChange=(action 'onTagChange')
-  openModal=openTagFilterModal}}
+      this.notification.showNotification(body);
+    });
+  },
+});
