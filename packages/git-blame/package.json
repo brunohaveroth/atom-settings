@@ -43,7 +43,7 @@
     "@workpop/eslint-config-workpop": "^1.0.0",
     "eslint": "^4.7.2",
     "fs-plus": "^3.0.1",
-    "standard-version": "^4.0.0",
+    "standard-version": "^8.0.1",
     "temp": "^0.8.3"
   },
   "engines": {
